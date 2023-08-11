@@ -76,6 +76,8 @@ const FullPageAnimation = () => {
                 muted
                 ref={videoRef}
                 src={matrixVideo}
+                preload="auto"
+                poster="../assets/loadingGif.gif" // path to your placeholder image
             >
                 Your browser does not support the video tag.
             </video>
