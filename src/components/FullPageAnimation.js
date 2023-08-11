@@ -53,14 +53,7 @@ const FullPageAnimation = () => {
         }
     }, [loadingDone, sequenceIndex]);
 
-    useEffect(() => {
-        fetch(matrixVideo)
-        .then(response => response.blob())
-        .then(blob => {
-            const objectURL = URL.createObjectURL(blob);
-            videoRef.current.src = objectURL;
-        });
-    }, []);
+    
     useEffect(() => {
         if (sequenceIndex >= sequences.length) {
             setTimeout(() => {
