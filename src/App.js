@@ -14,7 +14,7 @@ function App() {
       
         const animationTimeout = setTimeout(() => {
             setShowAnimation(false);
-        }, 8000);
+        }, 11000);
 
         return () => clearTimeout(animationTimeout);
     }, []);
