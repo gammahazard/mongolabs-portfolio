@@ -49,7 +49,7 @@ const FullPageAnimation = () => {
                 } else {
                     setSequenceIndex(prevIndex => prevIndex + 1);
                 }
-            }, 150);
+            }, 50);
         }
     }, [loadingDone, sequenceIndex]);
 
