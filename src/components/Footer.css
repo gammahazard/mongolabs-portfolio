@@ -1,0 +1,7 @@
+.footer {
+  padding: 20px 40px;
+  background-color: #333; /* Dark gray for a terminal feel */
+  color: #00FF00; /* Classic green color on black terminal screens */
+  text-align: center;
+  font-family: 'Fira Code', monospace; /* To keep the terminal font consistent */
+}

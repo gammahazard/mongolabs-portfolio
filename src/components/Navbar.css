@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Dark gray for a terminal feel */
+  padding: 10px 40px;
+  font-family: 'Fira Code', monospace; /* Terminal-like font */
+}
+
+.navbar-logo {
+  font-size: 24px;
+  color: #00FF00; /* Classic green color */
+}
+
+.navbar-links a {
+  margin-left: 20px;
+  color: #00FF00; /* Classic green color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #4CAF50; /* Slightly lighter green for hover effect */
+}

@@ -1,0 +1,170 @@
+/* src/components/FullPageAnimation.css */
+
+.full-page-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: #33ff33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensures it covers other content */
+  }
+  .hacking-sequence {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 80%;
+    text-align: left;
+    overflow: hidden;
+}
+
+.sequence-item {
+    display: flex;
+    align-items: center;
+}
+body {
+  font-family:"'DESG', monospace";
+}
+.checkmark {
+    color: #33ff33;  /* Adjust the green color if needed */
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+}
+.title {
+  font-size: 78px;
+margin-top:25px;
+  position: relative;
+  color: #33ff33; /* Matrix green color */
+  text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33, 0 0 20px #33ff33, 0 0 30px #33ff33; /* Initial glow effect */
+  animation: glowPulse 2s ease-in-out infinite, matrixBackground 10s linear infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33, 0 0 20px #33ff33, 0 0 30px #33ff33; /* Initial glow effect */
+  }
+  50% {
+    text-shadow: none; /* No glow effect */
+  }
+}
+
+@keyframes matrixBackground {
+  0% {
+    background: linear-gradient(to right, #000000 10%, #000033 90%);
+  }
+  100% {
+    background: linear-gradient(to right, #000033 10%, #000000 90%);
+  }
+}
+  
+  .loader {
+    width: 100%;
+    height: 4px; /* Adjust the height of the loading bar */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, lightgrey 0%, lightgrey 0%, blue 0%);
+    border: 2px solid transparent; /* Initial border */
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); /* Glowing effect */
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: transparent;
+    border: 2px solid yellow; /* Final border color */
+    border-radius: 4px;
+    animation: fillLoader 8s linear forwards, glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fillLoader {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 0, 1);
+    }
+  }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 9s ease-in-out;
+  background-color: transparent; /* It starts as black */
+  pointer-events: none; /* Allow interaction with elements underneath */
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff, 0 0 40px #ff00ff;
+  }
+}
+
+.initiating-text {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #fff; /* Make sure the text color contrasts well with the glow */
+    animation: pulseGlow 1.5s infinite alternate; /* Apply the pulsing glow animation */
+}
+  /* ... The existing CSS you provided ... */
+/* FullPageAnimation.css */
+
+.fade-to-black {
+  background-color: rgba(0, 0, 0, 1); /* Adjust opacity as needed */
+}
+
+
+.matrix-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#sequence-final {
+  font-size: 1.5em; /* Adjust the font size as needed */
+  color: #ffffff; /* Text color (white) */
+  animation: glowPulse 0.1s infinite; /* Adjust the animation duration for quicker pulse */
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 1);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1);
+  }
+}

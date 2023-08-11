@@ -1,0 +1,56 @@
+.app-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #00FF00; /* Green border, like old terminals */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    transition: transform 0.2s;
+    width: 100%;
+    height: auto;
+    font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+    color: #00FF00; /* Green text */
+    background-color: black; /* Black background to make it more like a terminal */
+}
+
+.app-showcase:hover {
+    transform: translateY(-5px);
+}
+
+.app-showcase-image {
+    max-width: 300px; 
+    max-height: 300px; 
+    object-fit: contain; 
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.3); /* Green shadow for some depth */
+}
+
+.app-showcase-title {
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 1px 1px 1px black; /* Add a slight shadow for more terminal-like look */
+}
+
+.app-showcase-description {
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 1px black; /* Same slight shadow */
+}
+
+.app-showcase-link {
+    background-color: black; /* Black background */
+    border: 1px solid #00FF00; /* Green border */
+    color: #00FF00; /* Green text */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.app-showcase-link:hover {
+    background-color: #333;
+    border-color: #00AA00; /* Darker green on hover */
+    color: white;
+}
