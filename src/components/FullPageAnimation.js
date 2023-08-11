@@ -27,15 +27,34 @@ const FullPageAnimation = () => {
 
     useEffect(() => {
         const videoElem = videoRef.current;
-        const handleCanPlay = () => {
-            videoElem.play();
-            setLoadingDone(true);
+    
+        const handleLoadedMetadata = () => {
+            if (videoElem.buffered.length > 0) {
+                // Check if the entire video is buffered
+                if (videoElem.buffered.end(0) >= videoElem.duration) {
+                    videoElem.play();
+                    setLoadingDone(true);
+                }
+            }
         };
-        videoElem.addEventListener('canplaythrough', handleCanPlay);
-
+    
+        const handleProgress = () => {
+            if (videoElem.buffered.length > 0) {
+                // Check if at least 10 seconds of the video has been buffered
+                if (videoElem.buffered.end(0) >= 2) {
+                    videoElem.play();
+                    setLoadingDone(true);
+                }
+            }
+        };
+    
+        videoElem.addEventListener('loadedmetadata', handleLoadedMetadata);
+        videoElem.addEventListener('progress', handleProgress);
+    
         // Cleanup listener on component unmount
         return () => {
-            videoElem.removeEventListener('canplaythrough', handleCanPlay);
+            videoElem.removeEventListener('loadedmetadata', handleLoadedMetadata);
+            videoElem.removeEventListener('progress', handleProgress);
         };
     }, []);
 
