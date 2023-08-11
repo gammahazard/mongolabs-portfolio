@@ -53,7 +53,14 @@ const FullPageAnimation = () => {
         }
     }, [loadingDone, sequenceIndex]);
 
-    
+    useEffect(() => {
+        fetch(matrixVideo)
+        .then(response => response.blob())
+        .then(blob => {
+            const objectURL = URL.createObjectURL(blob);
+            videoRef.current.src = objectURL;
+        });
+    }, []);
     useEffect(() => {
         if (sequenceIndex >= sequences.length) {
             setTimeout(() => {
@@ -77,7 +84,7 @@ const FullPageAnimation = () => {
                 ref={videoRef}
                 src={matrixVideo}
                 preload="auto"
-                poster="../assets/loadingGif.gif" // path to your placeholder image
+             
             >
                 Your browser does not support the video tag.
             </video>
