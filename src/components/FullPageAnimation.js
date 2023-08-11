@@ -27,34 +27,15 @@ const FullPageAnimation = () => {
 
     useEffect(() => {
         const videoElem = videoRef.current;
-    
-        const handleLoadedMetadata = () => {
-            if (videoElem.buffered.length > 0) {
-                // Check if the entire video is buffered
-                if (videoElem.buffered.end(0) >= videoElem.duration) {
-                    videoElem.play();
-                    setLoadingDone(true);
-                }
-            }
+        const handleCanPlay = () => {
+            videoElem.play();
+            setLoadingDone(true);
         };
-    
-        const handleProgress = () => {
-            if (videoElem.buffered.length > 0) {
-                // Check if at least 10 seconds of the video has been buffered
-                if (videoElem.buffered.end(0) >= 2) {
-                    videoElem.play();
-                    setLoadingDone(true);
-                }
-            }
-        };
-    
-        videoElem.addEventListener('loadedmetadata', handleLoadedMetadata);
-        videoElem.addEventListener('progress', handleProgress);
-    
+        videoElem.addEventListener('canplaythrough', handleCanPlay);
+
         // Cleanup listener on component unmount
         return () => {
-            videoElem.removeEventListener('loadedmetadata', handleLoadedMetadata);
-            videoElem.removeEventListener('progress', handleProgress);
+            videoElem.removeEventListener('canplaythrough', handleCanPlay);
         };
     }, []);
 
@@ -68,7 +49,7 @@ const FullPageAnimation = () => {
                 } else {
                     setSequenceIndex(prevIndex => prevIndex + 1);
                 }
-            }, 150);
+            }, 300);
         }
     }, [loadingDone, sequenceIndex]);
 
