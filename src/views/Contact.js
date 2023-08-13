@@ -3,6 +3,63 @@ import Navbar from '../components/Navbar';  // Assuming Navbar is in a component
 import Footer from '../components/Footer';  // Assuming Footer is in a components directory
 import './Contact.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useForm, ValidationError } from '@formspree/react';
+import { useState, useEffect } from 'react';
+
+function ContactForm() {
+    const [state, handleSubmit] = useForm("xoqoekrq");
+    const [isSending, setIsSending] = useState(false);
+
+    useEffect(() => {
+        if (state.submitting) {
+            setIsSending(true);
+            setTimeout(() => {
+                setIsSending(false);
+            }, 1000);
+        }
+    }, [state.submitting]);
+
+    if (state.succeeded) {
+        return <p>Message Sent! Please wait 1-3 business days for a reply.</p>;
+    }
+
+    return (
+        <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            />
+            <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+            />
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                required
+            />
+            <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+            />
+
+            {isSending ? (
+                <p>Sending Message...</p>
+            ) : (
+                <button type="submit" disabled={state.submitting}>
+                    Send
+                </button>
+            )}
+        </form>
+    );
+}
+
 function Contact() {
     return (
         <div className="contact-page">
@@ -12,31 +69,25 @@ function Contact() {
                 transition={{ duration: 1, delay: 0.5 }}
             >
                 <Navbar />
-                </motion.div>
+            </motion.div>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }} // Added delay of 0.5 seconds here
+                transition={{ duration: 1, delay: 1 }} 
             >
-            <div className="contact-container">
-                <h2>Contact Us</h2>
-                <p>If you have any questions or would like to work with us, please drop us a message:</p>
-                
-                <form className="contact-form">
-                    <input type="text" placeholder="Your Name" required />
-                    <input type="email" placeholder="Your Email" required />
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+                <div className="contact-container">
+                    <h2>Contact</h2>
+                    <p>If you have any questions or are looking to contact me, please drop me a message:</p>
+                    <ContactForm />
+                </div>
             </motion.div>
-        <motion.div 
+            <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
             >
                 <Footer />
-                </motion.div>
+            </motion.div>
         </div>
     );
 }
