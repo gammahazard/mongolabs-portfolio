@@ -2,13 +2,14 @@
 
 .home-container {
     min-height: 100vh;  /* Ensure it's at least as tall as the viewport */
- 
+ overflow-y:hidden;
     font-family: 'Fira Code', monospace; /* Using the imported font */
     background-color: black;
     color: #00FF00; /* Classic green color on black terminal screens */
     display: flex;
     flex-direction: column;
     height:100%;
+    overflow-x:hidden;
     position: relative;
 }
 
@@ -41,6 +42,7 @@
 .slider {
     -webkit-appearance: none;
     appearance: none;
+    position:fixed;
     width: 50%;
     height: 10px;
     border-radius: 5px;
@@ -49,7 +51,7 @@
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    margin-top: 20px;
+bottom:25%;
 }
 
 .slider:hover {
@@ -65,9 +67,7 @@
     background: #00FF00;
     cursor: pointer;
 }
-body {  overflow-y:hidden;
-    overflow-x:hidden;
-}
+
 .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -76,10 +76,8 @@ body {  overflow-y:hidden;
     cursor: pointer;
 }
 
-.footer {
-    font-family: 'Fira Code', monospace;
-    padding: 20px 40px;
-    background-color: #333; /* Dark gray instead of green for a more terminal feel */
-    color: #00FF00; /* Green text */
-    text-align: center;
+.navbar, .footer {
+    width: 100%;
+    box-sizing: border-box; /* This ensures padding and border are included in the element's total width and height */
+    position:sticky;
 }

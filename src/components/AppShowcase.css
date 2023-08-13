@@ -9,6 +9,7 @@
     transition: transform 0.2s;
     width: 100%;
     height: auto;
+    overflow-y:hidden;
     font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
     color: #00FF00; /* Green text */
     background-color: black; /* Black background to make it more like a terminal */

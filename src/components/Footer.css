@@ -1,7 +1,24 @@
 .footer {
-  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Adjust as needed */
   background-color: #333; /* Dark gray for a terminal feel */
-  color: #00FF00; /* Classic green color on black terminal screens */
-  text-align: center;
-  font-family: 'Fira Code', monospace; /* To keep the terminal font consistent */
+  color: #33FF33; /* Terminal green color */
+  font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  color: #33FF33; /* Terminal green color */
+  font-size: 24px; /* Adjust size as needed */
+  transition: color 0.3s;
+
+  &:hover {
+    color: #4CAF50; /* Slightly lighter green for hover effect */
+  }
 }

@@ -52,6 +52,7 @@ const FullPageAnimation = () => {
             className="full-page-animation"
             
         >
+                 <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
               <div className="matrix-rain"></div>
             <div className={`overlay ${loadingDone ? 'fade-to-black' : ''}`}></div>
             
@@ -93,7 +94,7 @@ const FullPageAnimation = () => {
                 </span>
             </motion.p>
 
-            <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
+       
         </motion.div>
     );
 };
