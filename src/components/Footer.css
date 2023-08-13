@@ -19,8 +19,14 @@
   color: #33FF33; /* Terminal green color */
   font-size: 24px; /* Adjust size as needed */
   transition: color 0.3s;
+}
+.footertext {
+text-align:right;
+font-size:small;
+}
 
-  &:hover {
+.icon:hover {
+
     color: #4CAF50; /* Slightly lighter green for hover effect */
-  }
+  
 }
