@@ -77,7 +77,7 @@ function Contact() {
             >
                 <div className="contact-container">
                     <h2>Contact</h2>
-                    <p>If you have any questions or are looking to contact me, please drop me a message:</p>
+                    <p>For any inquiries, concerns or questions, please contact me!:</p>
                     <ContactForm />
                 </div>
             </motion.div>
