@@ -5,27 +5,30 @@ import Home from './views/Home';
 import { motion } from 'framer-motion';
 import './App.css';
 
-
-
 function App() {
-    const [showAnimation, setShowAnimation] = useState(true);
+    // Get the hasWatched value from localStorage
+    const hasWatched = localStorage.getItem('hasWatchedIntro') === 'true';
+
+    // Using a state to decide whether to show the animation or not
+    const [showAnimation, setShowAnimation] = useState(!hasWatched);
 
     useEffect(() => {
-      
-        const animationTimeout = setTimeout(() => {
-            setShowAnimation(false);
-        }, 13000);
+        if (showAnimation) {
+            // If showing animation, set a timeout for its duration
+            const animationTimeout = setTimeout(() => {
+                setShowAnimation(false);  // Hide the animation after it's done
+                localStorage.setItem('hasWatchedIntro', 'true'); // Set localStorage value indicating user has watched the animation
+            }, 8000); // Assuming 8000ms is the full animation duration
 
-        return () => clearTimeout(animationTimeout);
-    }, []);
+            return () => clearTimeout(animationTimeout);
+        }
+    }, [showAnimation]);
 
     return (
         <div className="App">
             <AnimatePresence>
                 {showAnimation && <FullPageAnimation />}
-               
-    {!showAnimation && <Home />}
-
+                {!showAnimation && <Home />}
             </AnimatePresence>
         </div>
     );

@@ -1,42 +1,30 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import matrixVideo from '../assets/matrix_background.mp4';
+
 import './FullPageAnimation.css';
 
 
 
 const sequences = [
-    "Retrieving essential databases...",
-    "Performing routine syntax checks...",
-    "Priming asynchronous tasks...",
-    "Encrypting payloads...",
-    "Establishing secure connections...",
-    "Synchronizing distributed systems...",
-    "Optimizing binary trees...",
-    "Validating schema mutations...",
-    "Calibrating recursive algorithms...",
-    "Generating dynamic bytecode..."
+    "Retrieving core databases...",
+    "Executing syntax checks...",
+    "Priming async tasks...",
+    "Encrypting data payloads...",
+    "Securing connections...",
+    "Syncing central systems...",
+    "Optimizing bin trees...",
+    "Validating corrupt schema...",
+    "Calibrating algorithms...",
+    "Generating bytecode..."
 ];
 
 const FullPageAnimation = () => {
-    const videoRef = useRef(null);
     const [loadingDone, setLoadingDone] = useState(false);
     const [sequenceIndex, setSequenceIndex] = useState(0);
     const [fadeOut, setFadeOut] = useState(false);
 
-
     useEffect(() => {
-        const videoElem = videoRef.current;
-        const handleCanPlay = () => {
-            videoElem.play();
-            setLoadingDone(true);
-        };
-        videoElem.addEventListener('canplaythrough', handleCanPlay);
-
-        // Cleanup listener on component unmount
-        return () => {
-            videoElem.removeEventListener('canplaythrough', handleCanPlay);
-        };
+        setLoadingDone(true); // start the sequences immediately on mount
     }, []);
 
     useEffect(() => {
@@ -45,47 +33,30 @@ const FullPageAnimation = () => {
                 if (sequenceIndex > 5) {
                     setTimeout(() => {
                         setSequenceIndex(prevIndex => prevIndex + 1);
-                    }, 600);
+                    }, 350);
                 } else {
                     setSequenceIndex(prevIndex => prevIndex + 1);
                 }
-            }, 50);
+            }, 300);
         }
     }, [loadingDone, sequenceIndex]);
 
-    
-    useEffect(() => {
-        if (sequenceIndex >= sequences.length) {
-            setTimeout(() => {
-                setFadeOut(true);
-            }, 4000); // 3-4 seconds delay before starting the fade-out
-        }
-    }, [sequenceIndex]);
+
 
     return (
         <motion.div 
-        initial={{ opacity: 1 }} 
-        animate={{ opacity: 1 }} 
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1.5 }} 
-        className="full-page-animation"
-    >
-            <video 
-                className="matrix-background-video"
-                loop 
-                muted
-                ref={videoRef}
-                src={matrixVideo}
-                preload="auto"
-             
-            >
-                Your browser does not support the video tag.
-            </video>
-       
+            initial={{ opacity: 1 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }} 
+            className="full-page-animation"
+            
+        >
+              <div className="matrix-rain"></div>
             <div className={`overlay ${loadingDone ? 'fade-to-black' : ''}`}></div>
-  
+            
             <div className="hacking-sequence">
-  {sequences.map((seq, index) => (
+                {sequences.map((seq, index) => (
     <motion.div key={index} className="sequence-item">
       <motion.p 
         initial={{ opacity: 0 }} 
@@ -107,23 +78,24 @@ const FullPageAnimation = () => {
       )}
     </motion.div>
   ))}
-</div>
+ </div>
+
             <div className="loader"></div>
+            
             <motion.p 
-    initial={{ opacity: 0 }}
-    animate={{ opacity: (sequenceIndex >= sequences.length) ? 1 : 0 }}
-    transition={{ duration: 0.75, delay:0.85 }}
-    className="initiating-text"
->
-<span id="sequence-final" style={{ fontFamily: "'DSEG', monospace" }}>
-  Initializing the lab...
-</span>
-</motion.p>
-<h1 className="title"style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
+                initial={{ opacity: 0 }}
+                animate={{ opacity: (sequenceIndex >= sequences.length) ? 1 : 0 }}
+                transition={{ duration: 0.45, delay:0.25 }}
+                className="initiating-text"
+            >
+                <span id="sequence-final" style={{ fontFamily: "'DSEG', monospace" }}>
+                    Initializing the lab...
+                </span>
+            </motion.p>
+
+            <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
         </motion.div>
-        
     );
-    
 };
 
 export default FullPageAnimation;
