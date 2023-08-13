@@ -24,22 +24,24 @@ function App() {
         }
     }, [showAnimation]);
 
+    if (showAnimation) {
+        return <FullPageAnimation />;
+    }
+
     return (
         <Router>
             <div className="App">
                 <AnimatePresence>
-                    {showAnimation && <FullPageAnimation />}
-                    {!showAnimation && (
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/contact" element={<Contact />} />
-                        </Routes>
-                    )}
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                    </Routes>
                 </AnimatePresence>
             </div>
         </Router>
     );
 }
+
 
 export default App;
