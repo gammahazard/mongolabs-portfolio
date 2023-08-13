@@ -9,7 +9,9 @@ function Home() {
     const [currentApp, setCurrentApp] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [previousApp, setPreviousApp] = useState(null);
-
+    useEffect(() => {
+        console.log("Home component mounted or re-rendered");
+    });
     useEffect(() => {
         const slider = document.querySelector(".slider");
         if (isTransitioning) {
@@ -113,4 +115,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default React.memo(Home);
