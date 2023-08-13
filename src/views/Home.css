@@ -12,7 +12,9 @@
     overflow-x:hidden;
     position: relative;
 }
-
+.body {
+    overflow-x:hidden;
+}
 .overlay {
     position: absolute;
     top: 0;
@@ -76,11 +78,7 @@ bottom:25%;
     cursor: pointer;
 }
 
-.navbar, .footer {
-    width: 100%;
-    box-sizing: border-box; /* This ensures padding and border are included in the element's total width and height */
-    position:sticky;
-}
+
 @media (max-height:850px) {
     .slider {
 

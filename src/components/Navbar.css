@@ -2,12 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333; /* Dark gray for a terminal feel */
+  background-color: #180a0a; /* Dark gray for a terminal feel */
   padding: 10px 40px;
-  width:100vh;
-  font-family: 'Fira Code', monospace; /* Terminal-like font */
+  width: 100%;
 }
-/* Add this to your Navbar.css */
 
 .fade-enter {
   opacity: 0.01;
@@ -31,14 +29,61 @@
   font-size: 24px;
   color: #00FF00; /* Classic green color */
 }
+@keyframes borderFlow {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
 
+.navbar {
+
+}
+.navbar, .footer {
+    width: 100%;
+    box-sizing: border-box; 
+    position: sticky;
+    
+    padding: 20px 40px!important;
+    position: relative; /* Required for positioning the pseudo-elements */
+}
+
+.navbar::before, .navbar::after, .footer::before, .footer::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, blue, green, blue, transparent);
+    background-size: 200% 100%;
+    animation: borderFlow 3s linear infinite;
+    position: absolute;
+    left: 0;
+}
+
+.navbar::before, .footer::before {
+    top: 0; /* Position at the top for the "top border" */
+}
+
+.navbar::after, .footer::after {
+    bottom: 0; /* Position at the bottom for the "bottom border" */
+}
 .navbar-links a {
   margin-left: 20px;
   color: #00FF00; /* Classic green color */
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* added transition for background and border */
+  border: 1px solid #00FF00; /* Button border */
+  padding: 8px 15px; /* Button padding to make it more like a button */
+  border-radius: 10px; /* Slight roundness to the border */
+  background-color: transparent; /* Initial background color */
 }
 
 .navbar-links a:hover {
   color: #4CAF50; /* Slightly lighter green for hover effect */
+  background-color: #081212; /* Darker background for hover effect */
+  border-color: #4CAF50; /* Lighter border color on hover */
 }
