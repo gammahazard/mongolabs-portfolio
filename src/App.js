@@ -27,7 +27,7 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <AnimatePresence mode = 'wait'>
+                <AnimatePresence>
                     {showAnimation && <FullPageAnimation />}
                     {!showAnimation && (
                         <Routes>
