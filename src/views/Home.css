@@ -42,7 +42,7 @@
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    position:fixed;
+    position: relative;
     width: 50%;
     height: 10px;
     border-radius: 5px;
@@ -80,4 +80,12 @@ bottom:25%;
     width: 100%;
     box-sizing: border-box; /* This ensures padding and border are included in the element's total width and height */
     position:sticky;
+}
+@media (max-height:850px) {
+    .slider {
+
+    appearance:none;
+    position:relative;
+}
+
 }
