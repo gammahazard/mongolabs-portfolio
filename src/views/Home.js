@@ -65,6 +65,7 @@ function Home() {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
                 transition={{ duration: 1, delay: 1 }}
+       
             />
 
             <motion.div 
