@@ -45,7 +45,7 @@ function About() {
 <section className="skills-section">
     <h3>Skills & Technologies</h3>
     <p>
-        My toolkit is expansive, but JavaScript remains at its core. Whether it's crafting custom solutions with Vanilla JS or navigating the frameworks like React, Vue, Nuxt, Next, and Astro, I'm at home. My agility in the tech realm is underscored by my ability to swiftly grasp and apply new packages, ensuring that I always deliver precise and innovative solutions.
+        My toolkit is expansive, but JavaScript remains at its core. Whether it's crafting custom solutions with Vanilla JS or navigating the popular frameworks like React, Vue, Nuxt, Next, and Astro, and many others. I'm at home. My agility in the tech realm is underscored by my ability to swiftly grasp and apply new packages, ensuring that I always deliver precise and innovative solutions.
     </p>
 </section>
 

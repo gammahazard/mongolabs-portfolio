@@ -21,27 +21,27 @@ function Home() {
     const apps = [
         {
             title: "BlissTech",
-            description: "A secure, HIPAA-compliant pharmaceutical management platform offering real-time patient data encryption, activity logging, and dynamic user roles. Features an intuitive dashboard for pharmacists and technicians to manage prescriptions, monitor activities, and ensure the utmost patient privacy",
-            image: require('../assets/test0pic.png'),
-            link: "http://link_to_app1.com"
+            description: "A secure, HIPAA-compliant pharmaceutical management platform offering real-time patient data encryption, activity logging, and dynamic user roles. BlissTech is engineered with Electron, allowing it to be seamlessly bundled into a responsive desktop application for both Windows and MacOS platforms. It features an intuitive dashboard for pharmacists and technicians to manage prescriptions, monitor activities, and ensure the utmost patient privacy. With its advanced encryption and logging, BlissTech sets a high standard in safeguarding sensitive medical information.",
+            image: require('../assets/blisstech.png'),
+            link: "https://github.com/gammahazard/blisstech-exe"
         },
         {
             title: "CyberVerse",
             description: "A meticulously crafted website for a blockchain game on the Ergo network. Showcases in-game characters as NFTs, facilitating web3 wallet connections. The platform is enriched with custom JavaScript features, presenting an interactive UI and ensuring a secure user experience.",
-            image: require('../assets/test1pic.png'),
+            image: require('../assets/cyberverse.png'),
             link: "https://cybercitizens.io"
         },
         {
             title: "Automations Suite",
             description: "Developed a sophisticated automation system to tackle a surge in incoming data entries. Using Puppeteer for web tasks, coupled with Discord bots and servers for intercommunication, the solution efficiently sorted and categorized data. This strategic integration significantly reduced manual processing, allowing team members to prioritize other vital tasks.",
-            image: require('../assets/test2pic.png'),
-            link: "http://link_to_app3.com"
+            image: require('../assets/automations.png'),
+            link: "https://gist.github.com/gammahazard/3b65e3d9b6f5bf0b6289d13664abf156"
         },
         {
-            title: "App 4",
-            description: "Description for App 4.",
-            image: require('../assets/test3pic.png'),
-            link: "http://link_to_app4.com"
+            title: "To do list in Java",
+            description: "A to-do list application leveraging Vaadin for a modern web-based front end while utilizing vanilla Java for the backend logic. This project showcases the fusion of Java's robust backend capabilities with Vaadin's user-centric frontend components to create an interactive to-do list management system.",
+            image: require('../assets/java-todo.png'),
+            link: "https://github.com/gammahazard/todolist-java"
         }
     ];
 
