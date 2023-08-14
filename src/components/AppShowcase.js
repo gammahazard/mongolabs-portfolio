@@ -77,7 +77,7 @@ function AppShowcase({
                     <h3 className="app-showcase-title">{title}</h3>
                     <img src={image} alt={title} className="app-showcase-image" />
                     <p className="app-showcase-description">{description}</p>
-                    <a href={link} className="app-showcase-link">View Project</a>
+                    <a href={link}  target="_blank" rel="noopener noreferrer" className="app-showcase-link">View Project</a>
                 </motion.div>
             </div>
     
