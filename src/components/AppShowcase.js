@@ -26,7 +26,7 @@ function AppShowcase({
         if (!isTransitioning) {
             setIsTransitioning(true);
             onPrev();
-            setTimeout(() => setIsTransitioning(false), 800);  // Assume transition takes 200ms; adjust as needed.
+            setTimeout(() => setIsTransitioning(false), 800); 
         }
     }
 

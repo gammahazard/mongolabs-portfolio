@@ -79,23 +79,25 @@
 .arrow-button {
     background-color: transparent;
     border: none;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight:bolder;
+    
     cursor: pointer;
-    color: #00FF00;
-    padding: 0 10px;
+    color: #01ff1a;
+
     outline: none;
 }
 
 .arrow-button.left {
     position: absolute;
-    left: 0;
+  
     top: 50%;
     transform: translateY(-50%);
 }
 
 .arrow-button.right {
     position: absolute;
-    right: 0;
+  
     top: 50%;
     transform: translateY(-50%);
 }
