@@ -23,7 +23,9 @@ function AppShowcase({ title, description, image, link, direction }) {
             <img src={image} alt={title} className="app-showcase-image" />
             <p className="app-showcase-description">{description}</p>
             <a href={link} className="app-showcase-link">View Project</a>
+            
         </motion.div>
+        
     );
 }
 

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.41fdd679.css",
-    "main.js": "/static/js/main.fbfb58ec.js",
+    "main.css": "/static/css/main.d5007f6a.css",
+    "main.js": "/static/js/main.ed510007.js",
     "static/js/787.2b38a3a6.chunk.js": "/static/js/787.2b38a3a6.chunk.js",
-    "static/media/test0pic.png": "/static/media/test0pic.080ed8d05b68f0f96eb1.png",
-    "static/media/test1pic.png": "/static/media/test1pic.080ed8d05b68f0f96eb1.png",
-    "static/media/test3pic.png": "/static/media/test3pic.35e3c3ed4748bd280e45.png",
-    "static/media/test2pic.png": "/static/media/test2pic.3d6f5dc036352e6723ba.png",
+    "static/media/blisstech.png": "/static/media/blisstech.cab9099e6b5ed99bf19c.png",
+    "static/media/java-todo.png": "/static/media/java-todo.3da2e9d19a375860dda6.png",
+    "static/media/cyberverse.png": "/static/media/cyberverse.ef01df91cd9874ba949d.png",
+    "static/media/automations.png": "/static/media/automations.3d6f5dc036352e6723ba.png",
     "index.html": "/index.html",
-    "main.41fdd679.css.map": "/static/css/main.41fdd679.css.map",
-    "main.fbfb58ec.js.map": "/static/js/main.fbfb58ec.js.map",
+    "main.d5007f6a.css.map": "/static/css/main.d5007f6a.css.map",
+    "main.ed510007.js.map": "/static/js/main.ed510007.js.map",
     "787.2b38a3a6.chunk.js.map": "/static/js/787.2b38a3a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41fdd679.css",
-    "static/js/main.fbfb58ec.js"
+    "static/css/main.d5007f6a.css",
+    "static/js/main.ed510007.js"
   ]
 }

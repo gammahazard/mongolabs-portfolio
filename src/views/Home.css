@@ -45,6 +45,7 @@
     -webkit-appearance: none;
     appearance: none;
     position: relative;
+    display:fixed;
     width: 50%;
     height: 10px;
     border-radius: 5px;
