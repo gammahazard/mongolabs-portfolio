@@ -68,12 +68,14 @@
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
+    z-index:99
 }
 
 .app-showcase-link:hover {
     background-color: #333;
     border-color: #00AA00;
     color: white;
+    z-index:99
 }
 
 .arrow-button {
