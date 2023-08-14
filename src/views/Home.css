@@ -24,34 +24,7 @@
     position: relative;
 }
 
-.home-container::before, 
-.home-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0; /* Keep the waves behind the content */
 
-
-    /* Adjusted CSS gradients for more prominent waves */
-    background: repeating-linear-gradient(
-        -155deg,
-        rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
-        rgba(27, 142, 27, 0.2) 25px,
-        
-   
-        transparent 90px
-    );
-    background-repeat:
-
-}
-
-.home-container::after {
-    top: 25px; /* Offset to create the wave effect */
-    background-position: 20px 10px;
-}
 
 
 

@@ -50,10 +50,11 @@ const FullPageAnimation = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }} 
             className="full-page-animation"
-            
         >
-                 <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
-              <div className="matrix-rain"></div>
+            <div className="gradient-bg"></div>  {/* This is the new gradient background */}
+            
+            <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
+      
             <div className={`overlay ${loadingDone ? 'fade-to-black' : ''}`}></div>
             
             <div className="hacking-sequence">

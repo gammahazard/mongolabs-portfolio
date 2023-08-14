@@ -1,11 +1,9 @@
-/* src/components/FullPageAnimation.css */
 .full-page-animation {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
   color: #33ff33;
   display: flex;
   flex-direction: column;
@@ -13,46 +11,25 @@
   justify-content: center;
   z-index: 9999;
 }
-.full-page-animation::before, 
-.full-page-animation::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0; /* Keep the waves behind the content */
 
-    /* Using CSS gradients to create wave effects */
-    background: repeating-linear-gradient(
-        -45deg,
-        rgba(15, 255, 15, 0.4), /* Adjust the color and opacity for subtle waves on black bg */
-        rgba(15, 255, 15, 0.4) 10px,
-        transparent 10px,
-        transparent 20px
-    );
-    background-repeat:repeat-x
-}
-.full-page-animation::after {
-  top: 25px; /* Offset to create the wave effect */
-  background-position: 20px 10px;
-}
-
-.matrix-rain {
-  position: absolute;
+.gradient-bg {
+  position: absolute;  /* Make sure this is below the content */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #001100;
-  background-image: 
-    repeating-linear-gradient(0deg, transparent, transparent 98%, rgba(255,255,255,0.03) 100%), 
-    repeating-linear-gradient(90deg, transparent, transparent 98%, rgba(255,255,255,0.03) 100%);
-  background-size: 20px 20px;
-  animation: glowPulse 5s infinite alternate;
+  height: 200%; 
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 64, 0, 0.6), rgba(0, 0, 0, 1));
+  animation: gradientFlow 10s infinite linear;
+  z-index: -1;  /* Keep the gradient below the content */
 }
-
+@keyframes gradientFlow {
+  0% {
+      top: -100%; 
+  }
+  100% {
+      top: 0; 
+  }
+}
 .hacking-sequence > div {
   display: flex;
   flex-direction: column;

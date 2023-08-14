@@ -5,13 +5,14 @@
     height: max-content;
     display: flex;
     flex-direction: column;
+    padding: 0 10px 0 10px
 
 }
 
 .about-container {
 
     margin-inline: auto;
-
+padding: 10px 10px 10px 10px;
     flex-direction: column;
     justify-content: center;
 
@@ -23,38 +24,8 @@
     flex-direction: column;
     justify-content: center;
 }
-.gradient-containera::before, 
-.gradient-containera::after {
-    content: "";
-    position: absolute;
-    pointer-events:none;
-    top: 0;
-    left: 0;
-   
-    right: 0;
-    bottom: 0;
-    min-height:120%;
-
-    z-index: 0; /* Keep the waves behind the content */
 
 
-    /* Adjusted CSS gradients for more prominent waves */
-    background: repeating-linear-gradient(
-        -155deg,
-        rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
-        rgba(27, 142, 27, 0.2) 25px,
-        
-   
-        transparent 90px
-    );
-    background-repeat:repeat-x
-
-}
-
-.gradient-containera::after {
-    top: 25px; /* Offset to create the wave effect */
-    background-position: 20px 10px;
-}
 
 .about-container h2 {
     border-bottom: 1px solid #33FF33;
