@@ -1,31 +1,59 @@
 .about-page {
     background-color: black;
-    color: #33FF33; /* Terminal green color */
-    font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
-    height: 100%;
-    width:100%;
+    color: #33FF33;
+    font-family: 'Consolas', 'Courier New', Courier, monospace; 
+    height: max-content;
     display: flex;
     flex-direction: column;
 
-    justify-content: space-between; /* This will ensure navbar at top and footer at bottom */
-    
 }
-body {
-    padding: 0;
-    margin: 0 auto;
-overflow-x:hidden;
-    
 
-
-}
 .about-container {
-    width: 100%; 
-    max-width: 800px;
-    flex: 1; /* Makes sure it takes all available space between navbar and footer */
-    display: flex;
-margin-inline:auto;
+
+    margin-inline: auto;
+
     flex-direction: column;
-    gap: 20px; /* Provides consistent spacing between sections */
+    justify-content: center;
+
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+.gradient-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.gradient-containera::before, 
+.gradient-containera::after {
+    content: "";
+    position: absolute;
+    pointer-events:none;
+    top: 0;
+    left: 0;
+   
+    right: 0;
+    bottom: 0;
+    min-height:120%;
+
+    z-index: 0; /* Keep the waves behind the content */
+
+
+    /* Adjusted CSS gradients for more prominent waves */
+    background: repeating-linear-gradient(
+        -155deg,
+        rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
+        rgba(27, 142, 27, 0.2) 25px,
+        
+   
+        transparent 90px
+    );
+    background-repeat:repeat-x
+
+}
+
+.gradient-containera::after {
+    top: 25px; /* Offset to create the wave effect */
+    background-position: 20px 10px;
 }
 
 .about-container h2 {
@@ -49,7 +77,7 @@ margin-inline:auto;
 }
 section {
     border: 1px solid #33FF33;
-    padding: 20px;
+    padding: 10px 10px;
     box-shadow: 0 0 10px rgba(51, 255, 51, 0.5); /* Optional: A little glow effect */
     margin-bottom: 40px; /* Spacing between sections */
 }
@@ -67,3 +95,57 @@ section p {
 
 
 /* Mobile Styles */
+@media all and (max-width:850px) {
+    section {
+        border: 1px solid #33FF33;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(51, 255, 51, 0.5); /* Optional: A little glow effect */
+        margin-bottom: 40px; /* Spacing between sections */
+    }
+  .gradient-containera {
+
+margin-inline:auto;
+
+overflow-y:hidden;
+overflow-x:hidden;
+  }
+  .about-page {
+    display:block;
+    height:auto;
+  };
+  .about-container {
+height:auto;
+display:inline-block;
+
+  };
+  .gradient-containera::before, 
+  .gradient-containera::after {
+      content: "";
+      position: absolute;
+      pointer-events:none;
+      top: 0;
+      left: 0;
+     
+      right: 0;
+      bottom: 0;
+ 
+  
+      z-index: 0; /* Keep the waves behind the content */
+  
+  
+      /* Adjusted CSS gradients for more prominent waves */
+      background: repeating-linear-gradient(
+          -155deg,
+          rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
+          rgba(27, 142, 27, 0.2) 25px,
+          
+     
+          transparent 90px
+      );
+      
+  }
+
+
+
+
+}

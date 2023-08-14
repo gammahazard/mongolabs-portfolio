@@ -13,6 +13,30 @@
   justify-content: center;
   z-index: 9999;
 }
+.full-page-animation::before, 
+.full-page-animation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Keep the waves behind the content */
+
+    /* Using CSS gradients to create wave effects */
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(15, 255, 15, 0.4), /* Adjust the color and opacity for subtle waves on black bg */
+        rgba(15, 255, 15, 0.4) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    background-repeat:repeat-x
+}
+.full-page-animation::after {
+  top: 25px; /* Offset to create the wave effect */
+  background-position: 20px 10px;
+}
 
 .matrix-rain {
   position: absolute;

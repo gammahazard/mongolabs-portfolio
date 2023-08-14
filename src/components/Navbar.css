@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #180a0a; /* Dark gray for a terminal feel */
+  background-color: #000000; /* Dark gray for a terminal feel */
   padding: 10px 40px;
   width: 100%;
+  z-index:99;
 }
 
 .fade-enter {

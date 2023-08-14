@@ -5,9 +5,11 @@
   padding: 10px 20px; /* Adjust as needed */
   background-color: #333; /* Dark gray for a terminal feel */
   color: #33FF33; /* Terminal green color */
-  background-color: #180a0a; /* Dark gray for a terminal feel */
+  background-color: #000000; /* Dark gray for a terminal feel */
   border-top:1px solid lightgreen;
   font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
+  z-index:99;
+  margin-top:25px;
 }
 
 .social-icons {

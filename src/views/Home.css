@@ -1,17 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'); /* Fira Code Font */
+@keyframes waveMotion {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0px 0px 20px 10px;
+    }
+}
 
 .home-container {
     min-height: 100vh;  /* Ensure it's at least as tall as the viewport */
- overflow-y:hidden;
+    overflow-y: hidden;
+
     font-family: 'Fira Code', monospace; /* Using the imported font */
     background-color: black;
     color: #00FF00; /* Classic green color on black terminal screens */
     display: flex;
     flex-direction: column;
-    height:100%;
-    overflow-x:hidden;
+    height: 100%;
+
+    width:100%;
+    overflow-x: hidden;
     position: relative;
 }
+
+.home-container::before, 
+.home-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Keep the waves behind the content */
+
+
+    /* Adjusted CSS gradients for more prominent waves */
+    background: repeating-linear-gradient(
+        -155deg,
+        rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
+        rgba(27, 142, 27, 0.2) 25px,
+        
+   
+        transparent 90px
+    );
+    background-repeat:
+
+}
+
+.home-container::after {
+    top: 25px; /* Offset to create the wave effect */
+    background-position: 20px 10px;
+}
+
+
+
 .body {
     overflow-x:hidden;
 }

@@ -70,17 +70,21 @@ function Contact() {
             >
                 <Navbar />
             </motion.div>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }} 
-            >
-                <div className="contact-container">
-                    <h2>Contact</h2>
-                    <p>For any inquiries, concerns or questions, please contact me!:</p>
-                    <ContactForm />
-                </div>
-            </motion.div>
+
+            <div className="gradient-container"> {/* Adding the gradient container */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }} 
+                >
+                    <div className="contact-container">
+                        <h2>Contact</h2>
+                        <p>For any inquiries, concerns, or questions, please contact me!:</p>
+                        <ContactForm />
+                    </div>
+                </motion.div>
+            </div> {/* End of gradient container */}
+
             <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -91,5 +95,7 @@ function Contact() {
         </div>
     );
 }
+
+
 
 export default Contact;

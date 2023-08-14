@@ -1,21 +1,59 @@
-/* Setting the overall theme for the contact page */
 .contact-page {
     background-color: black;
-    color: #33FF33; /* Terminal green color */
+    color: #33FF33;
     font-family: 'Consolas', 'Courier New', Courier, monospace; 
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
 }
 
 .contact-container {
     width: 80%;
     max-width: 800px;
-    margin: 20px auto;
+    margin-inline: auto;
     padding: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid #33FF33;
     box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+.gradient-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.gradient-container::before, 
+.gradient-container::after {
+    content: "";
+    position: absolute;
+    pointer-events:none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 0; /* Keep the waves behind the content */
+
+
+    /* Adjusted CSS gradients for more prominent waves */
+    background: repeating-linear-gradient(
+        -155deg,
+        rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
+        rgba(27, 142, 27, 0.2) 25px,
+        
+   
+        transparent 90px
+    );
+    background-repeat:repeat-x
+
+}
+
+.gradient-container::after {
+    top: 25px; /* Offset to create the wave effect */
+    background-position: 20px 10px;
 }
 
 .contact-container h2 {
@@ -27,7 +65,13 @@
 .contact-container p {
     margin: 20px 0;
 }
-
+.contact-form {
+    display:flex;
+    flex-direction:column;
+    vertical-align:center;
+    justify-content:center;
+    align-items:center;
+}
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 10px;
@@ -47,6 +91,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    z-index:999;
 }
 
 .contact-form button:hover {

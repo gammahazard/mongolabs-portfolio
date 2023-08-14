@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import './About.css';
 import { motion, AnimatePresence } from 'framer-motion';
 function About() {
-    return  (
+    return (
         <div className="about-page">
             <motion.div 
                 initial={{ opacity: 0 }}
@@ -14,12 +14,13 @@ function About() {
                 <Navbar />
             </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }} // Added delay of 0.5 seconds here
-            >
-                <div className="about-container">
+            <div className="gradient-containera">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                >
+                    <div className="about-container">
                 <h2>About Mongo</h2>
                 <section className="intro-section">
     <h3>Introduction</h3>
@@ -66,6 +67,7 @@ function About() {
                 <Footer />
             </motion.div>
         
+        </div>
         </div>
     );
 }

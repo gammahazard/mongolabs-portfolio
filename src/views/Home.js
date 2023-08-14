@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,17 +7,27 @@ import AppShowcase from '../components/AppShowcase';
 
 function Home() {
     const [currentApp, setCurrentApp] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
-    const [previousApp, setPreviousApp] = useState(null);
+    const [direction, setDirection] = useState('forward'); // 'forward' or 'backward'
+
+
     useEffect(() => {
         console.log("Home component mounted or re-rendered");
     });
-    useEffect(() => {
-        const slider = document.querySelector(".slider");
-        if (isTransitioning) {
-            slider.blur(); // This will force the slider to lose focus and thus drop the click
-        }
-    }, [isTransitioning]);
+    const [exitDirection, setExitDirection] = useState(null);
+    const [enterDirection, setEnterDirection] = useState('forward');
+    
+
+    const onNext = () => {
+        setCurrentApp(prev => (prev + 1) % apps.length);
+        setExitDirection('backward');
+        setEnterDirection('forward');
+    }
+    
+    const onPrev = () => {
+        setCurrentApp(prev => (prev - 1 + apps.length) % apps.length);
+        setExitDirection('forward');
+        setEnterDirection('backward');
+    }
     const apps = [
         {
             title: "BlissTech",
@@ -45,19 +55,7 @@ function Home() {
         }
     ];
 
-    const handleSliderChange = (event) => {
-        if (isTransitioning) return;  // Ignore slider changes during transitions
-    
-        const newAppIndex = parseInt(event.target.value, 10);
-        console.log(`Changing from App ${currentApp} to App ${newAppIndex}`);
-        
-        setIsTransitioning(true);
-        setCurrentApp(newAppIndex);
-    
-        setTimeout(() => {
-            setIsTransitioning(false);
-        }, 1200);  // Duration of transition + a little buffer, just to be safe.
-    };
+
     return (
         <div className="home-container">
             <motion.div 
@@ -82,27 +80,25 @@ function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
             >
-             <AnimatePresence mode="wait">
+                
+                <AnimatePresence mode="wait">
     {currentApp >= 0 && currentApp < apps.length && (
+    
         <AppShowcase 
-            key={currentApp}  
-            title={apps[currentApp].title}
-            description={apps[currentApp].description}
-            image={apps[currentApp].image}
-            link={apps[currentApp].link}
-            direction={previousApp === null ? 'forward' : (currentApp > previousApp ? 'forward' : 'backward')}
-        />
+        key={currentApp}
+        title={apps[currentApp].title}
+        description={apps[currentApp].description}
+        image={apps[currentApp].image}
+        link={apps[currentApp].link}
+        direction={{ exit: exitDirection, enter: enterDirection }}
+    
+    onNext={onNext}  // passing the onNext function
+    onPrev={onPrev}  // passing the onPrev function
+
+/>
     )}
 </AnimatePresence>
-                <input 
-                type="range" 
-                min="0" 
-                max={apps.length - 1} 
-                value={currentApp} 
-                className="slider" 
-                onChange={handleSliderChange} 
-                disabled={isTransitioning}
-            />
+               
             </motion.div>
 
             <motion.div 
