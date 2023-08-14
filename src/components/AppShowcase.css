@@ -83,7 +83,7 @@
     border: none;
     font-size: 1rem;
     font-weight:bolder;
-    
+    opacity:0.6;
     cursor: pointer;
     color: #01ff1a;
 
@@ -119,3 +119,15 @@
 body {
     margin: 0 auto;
 }
+@media all and (max-width:850px) {
+.arrow-button {
+    background-color: transparent;
+    border: none;
+    font-size: 5rem;
+    font-weight:bolder;
+    
+    cursor: pointer;
+opacity:0.6;
+
+
+}}
