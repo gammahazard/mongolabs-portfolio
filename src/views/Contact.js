@@ -9,17 +9,25 @@ import { useState, useEffect } from 'react';
 function ContactForm() {
     const [state, handleSubmit] = useForm("xoqoekrq");
     const [isSending, setIsSending] = useState(false);
+    const [submitted, setSubmitted] = useState(false); // New state variable
 
     useEffect(() => {
         if (state.submitting) {
             setIsSending(true);
-            setTimeout(() => {
-                setIsSending(false);
-            }, 1000);
         }
-    }, [state.submitting]);
 
-    if (state.succeeded) {
+        if (state.succeeded) {
+            setIsSending(false);
+            setSubmitted(true); // Mark the form as submitted
+        }
+
+        if (!state.succeeded && !state.submitting) {
+            setIsSending(false); // Reset the sending state if there's an error
+        }
+
+    }, [state.submitting, state.succeeded]);
+
+    if (submitted) {
         return <p>Message Sent! Please wait 1-3 business days for a reply.</p>;
     }
 
@@ -59,6 +67,7 @@ function ContactForm() {
         </form>
     );
 }
+
 
 function Contact() {
     return (
