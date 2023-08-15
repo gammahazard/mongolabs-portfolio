@@ -83,6 +83,7 @@ min-height:100vh;
 ::placeholder {
     color: #33FF33;
     opacity: 1; /* Firefox */
+    font-size:larger;
     font-family: 'Consolas', 'Courier New', Courier, monospace; 
 
 }
