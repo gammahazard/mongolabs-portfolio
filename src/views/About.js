@@ -14,7 +14,6 @@ function About() {
                 <Navbar />
             </motion.div>
 
-            <div className="gradient-containera">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -42,6 +41,13 @@ function About() {
         At the heart of my expansive technical toolkit lies JavaScript. From crafting meticulous solutions with Vanilla JS to mastering renowned frameworks like React, Vue, Nuxt, Next, Astro, and beyond, I'm adept and versatile. My adaptability shines through as I rapidly assimilate and harness new packages, ensuring that every solution I deliver is both cutting-edge and exacting.
     </p>
 </section>
+<section className="experience-section">
+
+    <h3>Experience</h3>
+    <p>
+       Throughout my professional journey, I've been at the forefront of varied, impactful projects. My portfolio boasts captivating front-end designs and resilient backend architectures leveraging NodeJS and JavaScript. But my expertise doesn't stop there. I've seamlessly integrated automation and data collection processes and have even pioneered temperature-sensitive systems using Raspberry Pi. Each endeavor has not only been a challenge but also a milestone, continually refining my expertise.
+    </p>
+</section>
 
 <section className="current-role-section">
     <h3>Current Role</h3>
@@ -61,7 +67,7 @@ function About() {
             </motion.div>
         
         </div>
-        </div>
+       
     );
 }
 

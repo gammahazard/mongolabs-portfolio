@@ -16,7 +16,7 @@ function Footer() {
           <FaLinkedin className="icon" />
         </a>
       </div>
-      <div class="footertext">
+      <div className="footertext">
       © 2023 MongoLabs. All rights reserved.
       </div>
     </footer>

@@ -1,5 +1,6 @@
 .footer {
-  display: flex;
+  display: absolute;
+position:bottom;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px; /* Adjust as needed */
@@ -10,6 +11,7 @@
   font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
   z-index:99;
   margin-top:25px;
+  flex:500
 }
 
 .social-icons {

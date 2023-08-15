@@ -2,7 +2,8 @@
     background-color: black;
     color: #33FF33;
     font-family: 'Consolas', 'Courier New', Courier, monospace; 
-    height: max-content;
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     padding: 0 10px 0 10px
@@ -10,7 +11,8 @@
 }
 
 .about-container {
-
+display:flex;
+width:75%;
     margin-inline: auto;
 padding: 10px 10px 10px 10px;
     flex-direction: column;
@@ -18,13 +20,6 @@ padding: 10px 10px 10px 10px;
 
     box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
 }
-.gradient-container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 
 
 .about-container h2 {
@@ -49,6 +44,8 @@ padding: 10px 10px 10px 10px;
 section {
     border: 1px solid #33FF33;
     padding: 10px 10px;
+    width:50%;
+    margin-inline:auto;
     box-shadow: 0 0 10px rgba(51, 255, 51, 0.5); /* Optional: A little glow effect */
     margin-bottom: 40px; /* Spacing between sections */
 }
@@ -73,13 +70,7 @@ section p {
         box-shadow: 0 0 10px rgba(51, 255, 51, 0.5); /* Optional: A little glow effect */
         margin-bottom: 40px; /* Spacing between sections */
     }
-  .gradient-containera {
-
-margin-inline:auto;
-
-overflow-y:hidden;
-overflow-x:hidden;
-  }
+  
   .about-page {
     display:block;
     height:auto;
@@ -89,32 +80,9 @@ height:auto;
 display:inline-block;
 
   };
-  .gradient-containera::before, 
-  .gradient-containera::after {
-      content: "";
-      position: absolute;
-      pointer-events:none;
-      top: 0;
-      left: 0;
-     
-      right: 0;
-      bottom: 0;
  
-  
-      z-index: 0; /* Keep the waves behind the content */
-  
-  
-      /* Adjusted CSS gradients for more prominent waves */
-      background: repeating-linear-gradient(
-          -155deg,
-          rgba(11, 66, 11, 0.2), /* Adjust the color and opacity */
-          rgba(27, 142, 27, 0.2) 25px,
-          
-     
-          transparent 90px
-      );
       
-  }
+  
 
 
 
