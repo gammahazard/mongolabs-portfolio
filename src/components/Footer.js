@@ -12,7 +12,7 @@ function Footer() {
         <a href="https://twitter.com/gammahazard" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="icon" />
         </a>
-        <a href="#" rel="noopener noreferrer"> {/* Placeholder for LinkedIn */}
+        <a href="https://www.linkedin.com/in/cm-mongo-044230260/" rel="noopener noreferrer"> {/* Placeholder for LinkedIn */}
           <FaLinkedin className="icon" />
         </a>
       </div>
