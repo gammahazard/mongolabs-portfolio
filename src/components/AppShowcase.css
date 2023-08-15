@@ -60,7 +60,7 @@
     text-shadow: 1px 1px 1px black;
 }
 
-.app-showcase-link {
+.app-showcase-link , .platform-button{
     background-color: black;
     border: 1px solid #00FF00;
     color: #00FF00;
@@ -70,8 +70,13 @@
     transition: background-color 0.3s;
     z-index:99
 }
-
-.app-showcase-link:hover {
+.app-showcase-blank-link {
+    display:none;
+}
+.platform-button {
+margin-top:3%
+}
+.app-showcase-link:hover, .platform-button:hover {
     background-color: #333;
     border-color: #00AA00;
     color: white;
@@ -104,7 +109,7 @@
     transform: translateY(-50%);
 }
 .arrow-button:hover {
-    zoom:150%;
+    zoom:125%
 }
 .arrow-button:disabled {
     color: red;

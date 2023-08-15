@@ -8,9 +8,11 @@ function AppShowcase({
     image, 
     link, 
     direction, 
+    platforms = [],  // Default to an empty array if not provided.
     onNext,  // Event handler for next
     onPrev   // Event handler for previous
 }) {
+
 
     const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -59,7 +61,6 @@ function AppShowcase({
     
     return (
         <div className="app-showcase-wrapper">
-    
             <button 
                 className="arrow-button left" 
                 onClick={handlePrev}
@@ -67,8 +68,7 @@ function AppShowcase({
             >
                 &lt;
             </button>
-    
-            <div className="content-wrapper">  {/* This div will keep everything centered */}
+            <div className="content-wrapper">  
                 <motion.div className="app-showcase-content"
                     initial={initialProps}
                     animate={{ opacity: 1, x: 0 }}
@@ -77,7 +77,29 @@ function AppShowcase({
                     <h3 className="app-showcase-title">{title}</h3>
                     <img src={image} alt={title} className="app-showcase-image" />
                     <p className="app-showcase-description">{description}</p>
-                    <a href={link}  target="_blank" rel="noopener noreferrer" className="app-showcase-link">View Project</a>
+                    {
+                        title !== "BlissTech" ? (
+                            <a href={link} target="_blank" rel="noopener noreferrer" className="app-showcase-link">View Project</a>
+                        ) : (
+                            <button className="app-showcase-blank-link"></button>
+                        )
+                    }
+                   {
+    title === "BlissTech" && platforms.map(platform => (
+        <button 
+            key={platform.name} 
+            className="platform-button"
+            onClick={() => {
+                if(window.confirm("This will start a download for BlissTech on your computer, do you wish to continue?")) {
+                    window.location.href = platform.link;
+                }
+            }}
+        >
+            {platform.name}
+        </button>
+    ))
+}
+
                 </motion.div>
             </div>
     
@@ -89,6 +111,7 @@ function AppShowcase({
                 &gt;
             </button>
         </div>
+    
     );
     
 }

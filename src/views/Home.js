@@ -31,9 +31,14 @@ function Home() {
     const apps = [
         {
             title: "BlissTech",
-            description: "A secure, HIPAA-compliant pharmaceutical management platform offering real-time patient data encryption, activity logging, and dynamic user roles. BlissTech is engineered with Electron, allowing it to be seamlessly bundled into a responsive desktop application for both Windows and MacOS platforms. It features an intuitive dashboard for pharmacists and technicians to manage prescriptions, monitor activities, and ensure the utmost patient privacy. With its advanced encryption and logging, BlissTech sets a high standard in safeguarding sensitive medical information.",
+            description: "A secure, HIPAA-compliant pharmaceutical management platform offering real-time patient data encryption, activity logging, and dynamic user roles. BlissTech is engineered with Electron, allowing it to be seamlessly bundled into a responsive desktop application for both Windows and MacOS platforms. It features an intuitive dashboard for pharmacists and technicians to manage prescriptions, monitor activities, and ensure the utmost patient privacy. With its advanced encryption and logging, BlissTech sets a high standard in safeguarding sensitive medical information. Windows builds are stable, only working on Mac OS Darwin or earlier.",
             image: require('../assets/blisstech.png'),
-            link: "https://github.com/gammahazard/blisstech-exe"
+            platforms: [
+                { name: "Windows-x64", link: "https://mongolabs-blisstech.s3.us-west-2.amazonaws.com/BlissTech+1.0.0+x64.exe" },
+                { name: "Windows-x32", link: "https://mongolabs-blisstech.s3.us-west-2.amazonaws.com/BlissTech+1.0.0+x32.exe" },
+                { name: "Mac", link: "https://mongolabs-blisstech.s3.us-west-2.amazonaws.com/BlissTech-Mac.zip" },
+            ],
+     
         },
         {
             title: "CyberVerse",
@@ -84,17 +89,16 @@ function Home() {
                 <AnimatePresence mode="wait">
     {currentApp >= 0 && currentApp < apps.length && (
     
-        <AppShowcase 
-        key={currentApp}
-        title={apps[currentApp].title}
-        description={apps[currentApp].description}
-        image={apps[currentApp].image}
-        link={apps[currentApp].link}
-        direction={{ exit: exitDirection, enter: enterDirection }}
-    
-    onNext={onNext}  // passing the onNext function
-    onPrev={onPrev}  // passing the onPrev function
-
+<AppShowcase 
+    key={currentApp}
+    title={apps[currentApp].title}
+    description={apps[currentApp].description}
+    image={apps[currentApp].image}
+    link={apps[currentApp].link}
+    platforms={apps[currentApp].platforms}  // Add this line
+    direction={{ exit: exitDirection, enter: enterDirection }}
+    onNext={onNext}
+    onPrev={onPrev}
 />
     )}
 </AnimatePresence>

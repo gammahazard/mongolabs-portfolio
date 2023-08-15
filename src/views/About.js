@@ -25,35 +25,28 @@ function About() {
                 <section className="intro-section">
     <h3>Introduction</h3>
     <p>
-        A testament to continuous growth and diversification, I am not just a developer, but a visionary. My journey has been carved by relentless passion, a thirst for knowledge, and an unwavering commitment to shaping the future of web technologies. Every project I undertake is a step forward in my quest to push the boundaries of what's possible.
+        With an unwavering spirit and an innate ability to bounce back stronger, I stand not merely as a developer but as a forward-thinker. My resilience in the face of challenges and an insatiable hunger for knowledge shapes my approach to web technologies. Every milestone I achieve reaffirms my commitment to reinvent the contours of the digital realm.
     </p>
 </section>
 
 <section className="education-section">
     <h3>Education</h3>
     <p>
-        My academic path has been nothing short of diverse. I hold a Bachelor of Science in Kinesiology, which gave me insights into the intricacies of human movement. Following that, I pursued a Bachelor of Education, during which I worked as a supply teacher for public school boards, enriching young minds. As my interest pivoted to technology, I embarked on a Bachelor in Computer Science. To bolster my web development skills, I graduated from the esteemed web development bootcamp at UoFT. Each phase of my education has added a unique layer to my skill set, making me a multifaceted developer.
-    </p>
-</section>
-
-<section className="experience-section">
-    <h3>Experience</h3>
-    <p>
-        My professional landscape is a blend of diverse projects. From creating interactive frontend designs that captivate users to developing robust backend APIs using NodeJS and JavaScript, I've done it all. My expertise isn't limited to web design; I've dabbled in automation, data collection, and even ventured into hardware, setting up temperature-sensitive systems with Raspberry Pi. Every challenge encountered has been a learning opportunity, amplifying my proficiency in the domain.
+        My educational trajectory paints a picture of diversity and evolution. Beginning with a Bachelor of Science in Kinesiology, I delved into the complexities of human motion. Subsequently, my Bachelor of Education journey highlighted the essence of continuous growth, emphasizing the significance of lifelong learning. As my fascination gravitated towards technology, I embarked on a Bachelor in Computer Science, a journey I am currently navigating. Additionally, to further hone my web development prowess, I'm a proud alumnus of the renowned web development bootcamp at UoFT. Each chapter of my academic story enriches my multifarious aptitude as a developer.
     </p>
 </section>
 
 <section className="skills-section">
     <h3>Skills & Technologies</h3>
     <p>
-        My toolkit is expansive, but JavaScript remains at its core. Whether it's crafting custom solutions with Vanilla JS or navigating the popular frameworks like React, Vue, Nuxt, Next, Astro, and many others. I'm at home. My agility in the tech realm is underscored by my ability to swiftly grasp and apply new packages, ensuring that I always deliver precise and innovative solutions.
+        At the heart of my expansive technical toolkit lies JavaScript. From crafting meticulous solutions with Vanilla JS to mastering renowned frameworks like React, Vue, Nuxt, Next, Astro, and beyond, I'm adept and versatile. My adaptability shines through as I rapidly assimilate and harness new packages, ensuring that every solution I deliver is both cutting-edge and exacting.
     </p>
 </section>
 
 <section className="current-role-section">
     <h3>Current Role</h3>
     <p>
-        Currently, I am navigating the dynamic ecosystem of <a href="https://metafrontier.xyz" target="_blank" rel="noopener noreferrer">Metafrontier</a>, where I wear multiple hats – from community moderator to in-house software developer. My contributions extend to <a href="https://cybercitizens.io" target="_blank" rel="noopener noreferrer">CyberVerse</a>, where I play a key role as a website and backend developer, transforming visions into digital realities.
+        At present, I'm immersed in the vibrant world of <a href="https://metafrontier.xyz" target="_blank" rel="noopener noreferrer">Metafrontier</a>. Here, I seamlessly transition between roles – from community moderation to spearheading software development. Additionally, my expertise extends to <a href="https://cybercitizens.io" target="_blank" rel="noopener noreferrer">CyberVerse</a>, where I serve as a linchpin in website and backend development, breathing life into conceptual visions.
     </p>
 </section>
 
