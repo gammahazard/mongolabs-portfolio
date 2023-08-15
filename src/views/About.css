@@ -12,7 +12,8 @@
 
 .about-container {
 display:flex;
-width:75%;
+width:90%;
+flex:1;
     margin-inline: auto;
 padding: 10px 10px 10px 10px;
     flex-direction: column;
@@ -44,7 +45,7 @@ padding: 10px 10px 10px 10px;
 section {
     border: 1px solid #33FF33;
     padding: 10px 10px;
-    width:50%;
+
     margin-inline:auto;
     box-shadow: 0 0 10px rgba(51, 255, 51, 0.5); /* Optional: A little glow effect */
     margin-bottom: 40px; /* Spacing between sections */

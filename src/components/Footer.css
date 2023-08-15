@@ -1,17 +1,17 @@
 .footer {
   display: absolute;
-position:bottom;
+
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px; /* Adjust as needed */
-  background-color: #333; /* Dark gray for a terminal feel */
+  background-color: black;
   color: #33FF33; /* Terminal green color */
-  background-color: #000000; /* Dark gray for a terminal feel */
+
   border-top:1px solid lightgreen;
   font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
   z-index:99;
   margin-top:25px;
-  flex:500
+  flex-shrink:0;
 }
 
 .social-icons {
