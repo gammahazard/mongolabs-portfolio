@@ -10,7 +10,7 @@ import { configure } from '@testing-library/react';  // Import configure from @t
 // Configure RTL to automatically wait for elements to be available
 configure({ asyncUtilTimeout: 5000 });
 
-// You can add more setup code here if needed
+// You can add more setup code here if needed, this adds canvas as global object as it breaks testing, and it is only used for rendering background css animation
 
 global.Canvas = Canvas;
 global.Image = Image;
