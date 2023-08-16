@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'MongoLabsF';  /* You can name this whatever you like */
+  src: url('../assets/mongolabsfont.otf');
+
+}
 .full-page-animation {
   position: fixed;
   top: 0;
@@ -15,6 +20,7 @@
 
 .hacking-sequence > div {
   display: flex;
+  font-family:'MongoLabsF';
   flex-direction: column;
   margin-inline: auto;
   gap: 2vw; /* Use viewport width for spacing */
@@ -35,7 +41,7 @@
 }
 
 .body {
-  font-family: "'DESG', monospace";
+  font-family: 'MongoLabsF';
   z-index: 0;
 min-height:100%;
 overflow-y:scroll;
@@ -82,6 +88,7 @@ width:100%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  font-family: 'MongoLabsF';
   animation: pulseGlow 1.5s infinite alternate;
 }
 
@@ -141,6 +148,7 @@ top:15%;
   transition: background-color 9.5s ease-in-out;
   background-color: transparent;
   pointer-events: none;
+  font-family:'MongoLabsF'
 }
 
 .hacking-sequence, .title, .loader {
@@ -156,6 +164,7 @@ top:15%;
   font-size: 3vw; /* Use viewport width for scaling */
   margin-top: 1vw;
   z-index: 500;
+  font-family: 'MongoLabsF';
   color: #00FF00; /* Green text */
   animation: pulseGlow 1.5s infinite alternate;
   overflow-x:hidden;
@@ -167,10 +176,12 @@ top:15%;
 }
 * {margin: 0; padding: 0}
 body {background: #000;}
-canvas {display: block;}
+canvas {display: block;
+font-family:'MongoLabsF'}
 #sequence-final {
   font-size: 8vw; /* Use viewport width for scaling */
   color: #ffffff;
+  font-family:'MongoLabsF';
   z-index:5;
 top:50%;
 transform:translateX(-50%);
@@ -194,25 +205,30 @@ text-align:center;
   }
 body {
   height:100%;
+  font-family:'MongoLabsF'
 }
   .initiating-text {
     font-size: 24px;
     margin-top: 10px;
     overflow-x:hidden;
+    font-family:'MongoLabsF'
   }
 
   #sequence-final {
     font-size: 1.5em;
+    font-family:'MongoLabsF'
   }
 
   .hacking-sequence > div {
     gap: 8px;
+    font-family:'MongoLabsF'
   }
 }
 @media (max-width: 768px) {
   .title {
     font-size: 42px; 
     margin-top: 10px;
+    font-family:'MongoLabsF'
   }
 
   .hacking-sequence > div {

@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'MongoLabsF';  /* You can name this whatever you like */
+  src: url('../assets/mongolabsfont.otf');
+
+}
 .footer {
   display: absolute;
-
+font-family:'MongoLabsF';
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px; /* Adjust as needed */

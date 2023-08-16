@@ -1,7 +1,13 @@
-.navbar {
+
+@font-face {
+  font-family: 'MongoLabsF';  /* You can name this whatever you like */
+  src: url('../assets/mongolabsfont.otf');
+
+}.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family:'MongoLabsF';
   background-color: #000000; /* Dark gray for a terminal feel */
   padding: 10px 40px;
   width: 100%;

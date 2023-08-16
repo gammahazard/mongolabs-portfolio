@@ -6,16 +6,16 @@ import './FullPageAnimation.css';
 
 
 const sequences = [
-    "Retrieving core databases...",
-    "Executing syntax checks...",
-    "Priming async tasks...",
-    "Encrypting data payloads...",
-    "Securing connections...",
-    "Syncing central systems...",
-    "Optimizing bin trees...",
-    "Validating corrupt schema...",
-    "Calibrating algorithms...",
-    "Generating bytecode..."
+    "Retrieving core databases",
+    "Executing syntax checks",
+    "Priming async tasks",
+    "Encrypting data payloads",
+    "Securing connections",
+    "Syncing central systems",
+    "Optimizing bin trees",
+    "Validating corrupt schema",
+    "Calibrating algorithms",
+    "Generating bytecode"
 ];
 
 const FullPageAnimation = () => {
@@ -91,7 +91,7 @@ const FullPageAnimation = () => {
         >
 
             
-            <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
+            <h1 className="title">MongoLabs</h1>
       
             <div className={`overlay ${loadingDone ? 'fade-to-black' : ''}`}></div>
             
