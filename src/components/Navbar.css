@@ -49,14 +49,6 @@
   font-size: 24px;
   color: #00FF00; /* Classic green color */
 }
-@keyframes borderFlow {
-  0% {
-    background-position: -100% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
 
 
 .navbar, .footer {
@@ -68,14 +60,25 @@
     position: relative; /* Required for positioning the pseudo-elements */
 }
 
+
+@keyframes borderFlow {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
 .navbar::before, .navbar::after, .footer::before, .footer::after {
     content: "";
     display: block;
     height: 1px;
     width: 100%;
-    background: linear-gradient(90deg, transparent, blue, green, blue, transparent);
-    background-size: 200% 100%;
-    animation: borderFlow 3s linear infinite;
+    /* Adjusted gradient colors to different shades of green and black */
+    background: linear-gradient(90deg, #003300, #006600, #009900, #00cc00, #003300, #006600, #009900, #00cc00);
+    background-size: 50% 100%;  /* Same pattern size as before */
+    animation: borderFlow 15s linear infinite;
     position: absolute;
     left: 0;
 }

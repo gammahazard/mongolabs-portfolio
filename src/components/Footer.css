@@ -7,7 +7,7 @@
   background-color: black;
   color: #33FF33; /* Terminal green color */
 
-  border-top:1px solid lightgreen;
+
   font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
   z-index:99;
   margin-top:25px;
