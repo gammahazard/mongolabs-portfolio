@@ -36,7 +36,7 @@ To get started with the project, follow the steps below.
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/mongolabs-portfolio.git
+   git clone https://github.com/gammahazard/mongolabs-portfolio.git
 
    `cd mongolabs-portfolio`
 
