@@ -35,15 +35,16 @@ To get started with the project, follow the steps below.
 1. Clone the repository:
 
    git clone https://github.com/your-username/mongolabs-portfolio.git
-   cd mongolabs-portfolio
+
+   `cd mongolabs-portfolio`
 
 2. Install dependencies:
     
-    npm install
+    `npm install`
 
 3. Run the app in development mode:
 
-    npm start
+    `npm start`
 
 4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
@@ -61,7 +62,6 @@ The project follows a well-organized structure to maintain clarity and readabili
   - `components/`: Reusable components used throughout the app.
   - `views/`: Main views of the app, such as Home, About, and Contact.
   - `App.js`: Main entry point of the application.
-  - ...
 
 ## Learn More
 
