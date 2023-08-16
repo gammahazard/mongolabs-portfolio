@@ -76,7 +76,7 @@ describe('<App />', () => {
 
     // Simulate navigation to the Contact route
     await act(async () => {
-      userEvent.click(screen.getByText('Contact')); // Assuming your navbar link text is 'Contact'
+      userEvent.click(screen.getByText('Contact')); // click contact, change to target link
       await waitFor(() => {
         expect(screen.getByText('Contact')).toBeInTheDocument();
       });
@@ -96,7 +96,7 @@ describe('<App />', () => {
 
     // Simulate navigation to the About route
     await act(async () => {
-      userEvent.click(screen.getByText('About')); // Assuming your navbar link text is 'About'
+      userEvent.click(screen.getByText('About')); // click about - change to target link
       await waitFor(() => {
         expect(screen.getByText('About')).toBeInTheDocument();
       });
