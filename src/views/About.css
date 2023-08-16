@@ -1,9 +1,12 @@
 .about-page {
-    background-color: black;
-    color: #33FF33;
+    background-color: transparent;
+    position:relative;
+    z-index:2;
+    color: #33ff47;
     font-family: 'Consolas', 'Courier New', Courier, monospace; 
     min-height: 100vh;
-
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px; 
     display: flex;
     flex-direction: column;
     padding: 0 10px 0 10px
@@ -14,6 +17,7 @@
 display:flex;
 width:90%;
 flex:1;
+z-index:2;
     margin-inline: auto;
 padding: 10px 10px 10px 10px;
     flex-direction: column;

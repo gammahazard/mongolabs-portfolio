@@ -13,12 +13,14 @@
     overflow-y: hidden;
 
     font-family: 'Fira Code', monospace; /* Using the imported font */
-    background-color: black;
+    background-color:transparent;
     color: #00FF00; /* Classic green color on black terminal screens */
     display: flex;
     flex-direction: column;
     height: 100%;
-
+z-index:2;
+background-color: rgba(0, 0, 0, 0.6);
+border-radius: 5px; 
     width:100%;
     overflow-x: hidden;
     position: relative;

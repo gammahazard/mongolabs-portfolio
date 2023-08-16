@@ -22,11 +22,49 @@ const FullPageAnimation = () => {
     const [loadingDone, setLoadingDone] = useState(false);
     const [sequenceIndex, setSequenceIndex] = useState(0);
     const [fadeOut, setFadeOut] = useState(false);
-
+    const canvasRef = useRef(null);
     useEffect(() => {
         setLoadingDone(true); // start the sequences immediately on mount
     }, []);
-
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+    
+        // Set canvas dimensions
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    
+        // Check if canvas dimensions are valid
+        if (canvas.width <= 0 || canvas.height <= 0) return;
+    
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'.split('');
+        const fontSize = 10;
+    
+        // Ensure columns is at least 1
+        const columns = Math.max(1, Math.floor(canvas.width / fontSize));
+        
+        const drops = Array(columns).fill(1);
+        
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillStyle = '#0f0';
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                drops[i]++;
+                if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+                    drops[i] = 0;
+                }
+            }
+        }
+        
+        const intervalId = setInterval(draw, 33);
+        
+        // Cleanup function
+        return () => clearInterval(intervalId);
+    }, []);
+    
     useEffect(() => {
         if (loadingDone && sequenceIndex < sequences.length) {
             setTimeout(() => {
@@ -51,7 +89,7 @@ const FullPageAnimation = () => {
             transition={{ duration: 1.5 }} 
             className="full-page-animation"
         >
-            <div className="gradient-bg"></div>  {/* This is the new gradient background */}
+
             
             <h1 className="title" style={{ fontFamily: "'DSEG', monospace" }}>MongoLabs</h1>
       
@@ -93,8 +131,9 @@ const FullPageAnimation = () => {
                 <span id="sequence-final" style={{ fontFamily: "'DSEG', monospace" }}>
                     Initializing the lab...
                 </span>
+       
             </motion.p>
-
+            <canvas ref={canvasRef}></canvas>
        
         </motion.div>
     );

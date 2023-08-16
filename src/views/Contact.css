@@ -1,10 +1,14 @@
 .contact-page {
-    background-color: black;
+    background-color: transparent;
     color: #33FF33;
     font-family: 'Consolas', 'Courier New', Courier, monospace; 
     width:100%;
 min-height:100vh;
     display: flex;
+    position:relative;
+    z-index:2;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px; 
     flex:1;
     flex-direction: column;
 }

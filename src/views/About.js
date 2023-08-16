@@ -38,7 +38,7 @@ function About() {
 <section className="skills-section">
     <h3>Skills & Technologies</h3>
     <p>
-        At the heart of my expansive technical toolkit lies JavaScript. From crafting meticulous solutions with Vanilla JS to mastering renowned frameworks like React, Vue, Nuxt, Next, Astro, and beyond, I'm adept and versatile. My adaptability shines through as I rapidly assimilate and harness new packages, ensuring that every solution I deliver is both cutting-edge and exacting.
+        At the heart of my expansive technical toolkit lies JavaScript. From crafting meticulous solutions with Vanilla JS to mastering renowned frameworks like React, Vue, Nuxt, Next, Astro, and beyond, I'm adept and versatile. My expertise extends to ensuring code compatibility across different JavaScript versions; I've frequently transpiled between ES5 and ES6 to maintain compatibility with older packages on contemporary architectures. This depth of knowledge highlights my commitment to delivering solutions that are both forward-thinking and mindful of existing infrastructures.
     </p>
 </section>
 <section className="experience-section">
