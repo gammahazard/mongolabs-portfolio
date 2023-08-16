@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor , act} from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event'; // Import userEvent for simulating user interactions
 
@@ -13,50 +13,62 @@ describe('<App />', () => {
     global.localStorage.__proto__.getItem = mockGetItem;
   });
 
+  // Test case: Home route renders correctly
   it('renders correct routes', async () => {
+    // Set the mock value for localStorage
     mockGetItem.mockReturnValueOnce('true'); // User has watched the intro
 
-    // Testing '/' (home) route
-    render(
-   
-        <App />
+    // Render the App component
+    render(<App />);
 
-    );
-
-    // Use waitFor to wait for animations or async operations to complete
+    // Wait for animations or async operations to complete
     await waitFor(() => {
       expect(screen.getByText('BlissTech')).toBeInTheDocument();
     });
-    
   });
 
+  // Set the timeout for the test suite
   jest.setTimeout(10000); // 10 seconds
 
+  // Test case: Footer renders correctly
   it('renders footer correctly', () => {
+    // Set the mock value for localStorage
     mockGetItem.mockReturnValueOnce('true');
-  
+
+    // Render the App component
     render(<App />);
-  
-    // Checking for footer content
+
+    // Check for footer content
     expect(screen.getByText('MongoLabs')).toBeInTheDocument();
   });
+
+  // Test case: Navbar renders correctly
   it('renders navbar correctly', () => {
+    // Set the mock value for localStorage
     mockGetItem.mockReturnValueOnce('true');
-  
+
+    // Render the App component
     render(<App />);
-  
-    // Checking for footer content
+
+    // Check for navbar content
     expect(screen.getByText('MongoLabs')).toBeInTheDocument();
   });
+
+  // Test case: AppShowcase component renders properly
   it('renders AppShowcase component properly', () => {
+    // Set the mock value for localStorage
     mockGetItem.mockReturnValueOnce('true');
-  
+
+    // Render the App component
     render(<App />);
-  
-    // Checking if the AppShowcase component is rendered
+
+    // Check if the AppShowcase component is rendered
     expect(screen.getByTestId('app-showcase')).toBeInTheDocument();
   });
+
+  // Test case: Contact route renders correctly
   it('renders Contact route', async () => {
+    // Set the mock value for localStorage
     mockGetItem.mockReturnValueOnce('true');
 
     // Render the App component
@@ -70,12 +82,13 @@ describe('<App />', () => {
       });
     });
 
-    // Checking for content specific to the Contact route
+    // Check for content specific to the Contact route
     expect(screen.getByText('Contact')).toBeInTheDocument();
   });
 
-  // Add a test case for the About route
+  // Test case: About route renders correctly
   it('renders About route', async () => {
+    // Set the mock value for localStorage
     mockGetItem.mockReturnValueOnce('true');
 
     // Render the App component
@@ -89,7 +102,7 @@ describe('<App />', () => {
       });
     });
 
-    // Checking for content specific to the About route
+    // Check for content specific to the About route
     expect(screen.getByText('Current Role')).toBeInTheDocument();
   });
 });
