@@ -5,7 +5,7 @@
     color: #33ff47;
     font-family: 'Consolas', 'Courier New', Courier, monospace; 
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 5px; 
     display: flex;
     flex-direction: column;
