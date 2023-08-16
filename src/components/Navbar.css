@@ -20,7 +20,26 @@
 .fade-exit {
   opacity: 1;
 }
+.burger-menu > div {
+  height: 3px;
+  background: #00FF00; /* the same green color as navbar links */
+  width: 25px;
+  
+}
+.menu-section {
+  display: flex;
+  
+  justify-content: flex-end;
+  width: 100%;
+}
 
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 4px; /* gives space between the lines of the burger */
+  cursor: pointer;
+}
 .fade-exit.fade-exit-active {
   opacity: 0.01;
   transition: opacity 500ms ease-in;
@@ -88,19 +107,57 @@
 }
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;  /* Stack items vertically */
-      padding: 10px;  /* Adjust padding */
+      flex-direction: column;
+      padding: 10px;
+  }
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 100;
+    display: flex; /* Always displayed, but hidden with opacity and transform */
+    padding: 10px;
+    flex-direction: column;
+    transform: translateY(-100%);
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements when hidden */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Added opacity to transitions */
+}
+
+.navbar-links.open {
+    transform: translateY(0);
+    opacity: 1; /* Fully visible when open */
+    pointer-events: all; /* Interactions enabled when visible */
+    box-shadow: 0 0 15px 5px #00FF00;
+}
+
+  .navbar-links a {
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: center;
+  }
+}
+
+
+
+@media (min-width: 769px) {
+  .burger-menu, .navbar-links {
+      display: none;
+  }
+
+  .navbar {
+      flex-direction: row;
   }
 
   .navbar-links {
-      display: flex; /* Add flex to the link container */
-      flex-direction: column; /* Stack the links vertically */
-      align-items: center; /* Center-align links */
+      position: static;
+      background: none;
+      display: flex;
+      flex-direction: row;
   }
 
   .navbar-links a {
-      margin-left: 0;  /* Remove left margin */
-      margin-top: 10px;  /* Add some top margin for spacing */
-      text-align: center; /* Center the text of the links */
+      margin: 0 10px;
   }
 }
