@@ -1,8 +1,27 @@
+/* Font Import */
 @font-face {
-  font-family: 'MongoLabsF';  /* You can name this whatever you like */
+  font-family: 'MongoLabsF';
   src: url('../assets/mongolabsfont.otf');
-
 }
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  font-family: 'MongoLabsF';
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
+canvas {
+  display: block;
+}
+
+/* Full Page Animation */
 .full-page-animation {
   position: fixed;
   top: 0;
@@ -17,71 +36,7 @@
   z-index: 9999;
 }
 
-
-.hacking-sequence > div {
-  display: flex;
-  font-family:'MongoLabsF';
-  flex-direction: column;
-  margin-inline: auto;
-  gap: 2vw; /* Use viewport width for spacing */
-  z-index: 2;
-  border: 1px dotted #00FF00;
-  border-radius: 25%;
-  border-color: lightgreen;
-  overflow-x:hidden;
-  max-width: 100%;
-  text-align: left;
-  overflow-x: hidden;
-}
-
-.sequence-item {
-  display: flex;;
-  align-items: center;
-  overflow-x:hidden;
-}
-
-.body {
-  font-family: 'MongoLabsF';
-  z-index: 0;
-min-height:100%;
-overflow-y:scroll;
-  font-size: 16px; /* Base size for REM units */
-}
-
-.checkmark {
-  color: #33ff33;
-  margin-left: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  display: inline-block;
-}
-
-.hacking-sequence {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 100%; 
-  width: 90%; 
-  overflow-y: hidden;
-  overflow-x:hidden;
-  justify-content:start;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-}
-.hacking-sequence > div {
-  border: 1px dotted #00FF00; /* Green border */
-  color: #00FF00; /* Green text */
-border-radius:15%;
-display:flex;
-height:100%;
-overflow-x:hidden;
-vertical-align:center;
-width:100%;
-}
-
+/* Title Styles */
 .title {
   position: absolute;
   top: 10%;
@@ -92,18 +47,60 @@ width:100%;
   animation: pulseGlow 1.5s infinite alternate;
 }
 
+/* Hacking Sequence Styles */
+.hacking-sequence {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  width: 90%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.hacking-sequence > div {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  gap: 2vw;
+  z-index: 2;
+  border: 1px dotted #00FF00;
+  border-radius: 25%;
+  overflow-x: hidden;
+  min-width: 100%;
+  text-align: left;
+}
+
+.sequence-item {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.checkmark {
+  color: #33ff33;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* Loader Styles */
 .loader {
   width: 100%;
   height: 4px;
-  z-index:5;
-  position:absolute;
-  opacity:0.5;
-  
+  position: absolute;
+  opacity: 0.5;
   margin-top: 10px;
-  overflow: hidden;
   background: linear-gradient(to right, lightgrey 0%, lightgrey 0%, blue 0%);
-top:15%;
-  z-index:5;
+  top: 15%;
+  z-index: 5;
   border: 2px solid transparent;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
@@ -116,29 +113,14 @@ top:15%;
   left: 0;
   height: 100%;
   width: 0;
-  z-index:5;
+  z-index: 5;
   background-color: transparent;
-  border: 2px solid yellow; /* Final border color */
+  border: 2px solid yellow;
   border-radius: 4px;
   animation: fillLoader 6s linear forwards, glow 1s ease-in-out infinite alternate;
 }
 
-@keyframes fillLoader {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes glowPulse {
-  0%, 100% {
-    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33, 0 0 20px #33ff33, 0 0 30px #33ff33; /* Initial glow effect */
-  }
-  50% {
-    text-shadow: none; /* No glow effect */
-  }
-}
+/* Overlay Styles */
 .overlay {
   position: absolute;
   top: 0;
@@ -148,106 +130,94 @@ top:15%;
   transition: background-color 9.5s ease-in-out;
   background-color: transparent;
   pointer-events: none;
-  font-family:'MongoLabsF'
-}
-
-.hacking-sequence, .title, .loader {
-  z-index: 5;
-}
-
-.matrix-rain {
-  border: 2px solid red;
+  font-family: 'MongoLabsF';
 }
 
 .initiating-text {
-  text-align:center;
-  font-size: 3vw; /* Use viewport width for scaling */
+  text-align: center;
+  font-size: 3vw;
   margin-top: 1vw;
   z-index: 500;
   font-family: 'MongoLabsF';
-  color: #00FF00; /* Green text */
+  color: #00FF00;
   animation: pulseGlow 1.5s infinite alternate;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
-
-.fade-to-black {
-  background-color: rgba(0, 0, 0, 1);
-}
-* {margin: 0; padding: 0}
-body {background: #000;}
-canvas {display: block;
-font-family:'MongoLabsF'}
 #sequence-final {
-  font-size: 8vw; /* Use viewport width for scaling */
+  font-size: 8vw;
   color: #ffffff;
-  font-family:'MongoLabsF';
-  z-index:5;
-top:50%;
-transform:translateX(-50%);
-  position:absolute;
-    overflow-x:hidden;
-align-items:center;
-text-align:center;
-
+  font-family: 'MongoLabsF';
+  z-index: 5;
+  top: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  overflow-x: hidden;
+  align-items: center;
+  text-align: center;
   animation: glowPulse 0.1s infinite;
   display: flex;
-  justify-content:center;
-  align-items:center;
-  box-shadow:#33ff33
+  justify-content: center;
 }
 
-/* Media Query for Larger Screens */
+/* Keyframes and Animations */
+@keyframes fillLoader {
+  0% {
+      width: 0;
+  }
+  100% {
+      width: 100%;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+      text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33, 0 0 20px #33ff33, 0 0 30px #33ff33;
+  }
+  50% {
+      text-shadow: none;
+  }
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
   .title {
-    font-size: 42px;
-
+      font-size: 42px;
   }
-body {
-  height:100%;
-  font-family:'MongoLabsF'
-}
+
   .initiating-text {
-    font-size: 24px;
-    margin-top: 10px;
-    overflow-x:hidden;
-    font-family:'MongoLabsF'
+      font-size: 24px;
+      margin-top: 10px;
   }
 
   #sequence-final {
-    font-size: 1.5em;
-    font-family:'MongoLabsF'
+      font-size: 1.5em;
   }
 
   .hacking-sequence > div {
-    gap: 8px;
-    font-family:'MongoLabsF'
+      gap: 8px;
   }
 }
+
 @media (max-width: 768px) {
   .title {
-    font-size: 42px; 
-    margin-top: 10px;
-    font-family:'MongoLabsF'
+      font-size: 42px;
+      margin-top: 10px;
   }
 
   .hacking-sequence > div {
-    gap: 4px;
+      gap: 4px;
   }
 
   .initiating-text {
-    font-size: 18px;
+      font-size: 18px;
   }
 
   .sequence-item {
-    font-size: 14px;
+      font-size: 14px;
   }
 
   .full-page-animation {
-    flex-direction: column-reverse; 
-  }
-  .loader {
-z-index:5;
-position:absolute;
+      flex-direction: column-reverse;
   }
 }

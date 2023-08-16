@@ -1,19 +1,22 @@
-
+/* Custom font for the website */
 @font-face {
-  font-family: 'MongoLabsF';  /* You can name this whatever you like */
+  font-family: 'MongoLabsF';
   src: url('../assets/mongolabsfont.otf');
+}
 
-}.navbar {
+/* Main Navbar styling */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family:'MongoLabsF';
-  background-color: #000000; /* Dark gray for a terminal feel */
+  font-family: 'MongoLabsF';
+  background-color: #000000;
   padding: 10px 40px;
   width: 100%;
-  z-index:99;
+  z-index: 99;
 }
 
+/* Transition styling for fade-in */
 .fade-enter {
   opacity: 0.01;
 }
@@ -23,18 +26,26 @@
   transition: opacity 500ms ease-in;
 }
 
+/* Transition styling for fade-out */
 .fade-exit {
   opacity: 1;
 }
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+/* Burger menu icon styling */
 .burger-menu > div {
   height: 3px;
-  background: #00FF00; /* the same green color as navbar links */
+  background: #00FF00;
   width: 25px;
-  
 }
+
+/* Container for burger menu and navbar links */
 .menu-section {
   display: flex;
-  
   justify-content: flex-end;
   width: 100%;
 }
@@ -42,31 +53,17 @@
 .burger-menu {
   display: flex;
   flex-direction: column;
-  
-  gap: 4px; /* gives space between the lines of the burger */
+  gap: 4px;
   cursor: pointer;
 }
-.fade-exit.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 500ms ease-in;
-}
 
+/* Navbar logo styling */
 .navbar-logo {
   font-size: 24px;
-  color: #00FF00; /* Classic green color */
+  color: #00FF00;
 }
 
-
-.navbar, .footer {
-    width: 100%;
-    box-sizing: border-box; 
-    position: sticky;
-    
-    padding: 20px 40px!important;
-    position: relative; /* Required for positioning the pseudo-elements */
-}
-
-
+/* Pseudo-element animations for the navbar and footer */
 @keyframes borderFlow {
   0% {
     background-position: -100% 0;
@@ -76,70 +73,90 @@
   }
 }
 
+/* Common styles for both navbar and footer */
+.navbar, .footer {
+  width: 100%;
+  box-sizing: border-box; 
+  position: sticky;
+  position: relative;
+  padding: 20px 40px !important;
+}
+
+/* 
+  Styles for pseudo-elements for animated borders 
+*/
 .navbar::before, .navbar::after, .footer::before, .footer::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    /* Adjusted gradient colors to different shades of green and black */
-    background: linear-gradient(90deg, #003300, #006600, #009900, #00cc00, #003300, #006600, #009900, #00cc00);
-    background-size: 50% 100%;  /* Same pattern size as before */
-    animation: borderFlow 15s linear infinite;
-    position: absolute;
-    left: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #003300, #006600, #009900, #00cc00, #003300, #006600, #009900, #00cc00);
+  background-size: 50% 100%;
+  animation: borderFlow 15s linear infinite;
+  position: absolute;
+  left: 0;
 }
 
 .navbar::before, .footer::before {
-    top: 0; /* Position at the top for the "top border" */
+  top: 0;  /* Position at the top for the "top border" */
 }
 
 .navbar::after, .footer::after {
-    bottom: 0; /* Position at the bottom for the "bottom border" */
+  bottom: 0; /* Position at the bottom for the "bottom border" */
 }
+
+/* 
+  Navbar links styling 
+*/
 .navbar-links a {
   margin-left: 20px;
-  color: #00FF00; /* Classic green color */
-  margin-top:0.5rem;
-  margin-bottom:0.5rem;
+  color: #00FF00;  /* Classic green color */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-decoration: none;
-  transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* added transition for background and border */
-  border: 1px solid #00FF00; /* Button border */
-  padding: 8px 15px; /* Button padding to make it more like a button */
-  border-radius: 10px; /* Slight roundness to the border */
-  background-color: transparent; /* Initial background color */
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;  /* Added transition for background and border */
+  border: 1px solid #00FF00;  /* Button border */
+  padding: 8px 15px;  /* Button padding */
+  border-radius: 10px;  /* Slight roundness to the border */
+  background-color: transparent;  /* Initial background color */
 }
 
 .navbar-links a:hover {
-  color: #4CAF50; /* Slightly lighter green for hover effect */
-  background-color: #081212; /* Darker background for hover effect */
-  border-color: #4CAF50; /* Lighter border color on hover */
+  color: #4CAF50;  /* Slightly lighter green for hover effect */
+  background-color: #081212;  /* Darker background for hover effect */
+  border-color: #4CAF50;  /* Lighter border color on hover */
 }
+
+/* 
+  Responsive styling for mobile views 
+*/
 @media (max-width: 768px) {
   .navbar {
       flex-direction: column;
       padding: 10px;
   }
-  .navbar-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 100;
-    display: flex; /* Always displayed, but hidden with opacity and transform */
-    padding: 10px;
-    flex-direction: column;
-    transform: translateY(-100%);
-    opacity: 0; /* Hidden by default */
-    pointer-events: none; /* Ensure it doesn't interfere with other elements when hidden */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Added opacity to transitions */
-}
 
-.navbar-links.open {
-    transform: translateY(0);
-    opacity: 1; /* Fully visible when open */
-    pointer-events: all; /* Interactions enabled when visible */
-    box-shadow: 0 0 15px 5px #00FF00;
-}
+  .navbar-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 100;
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+      transform: translateY(-100%);
+      opacity: 0;  /* Hidden by default */
+      pointer-events: none;  /* Ensure it doesn't interfere */
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;  /* Transition for show/hide */
+  }
+
+  .navbar-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+      box-shadow: 0 0 15px 5px #00FF00;
+  }
 
   .navbar-links a {
       margin-left: 0;
@@ -148,8 +165,9 @@
   }
 }
 
-
-
+/* 
+  Responsive styling for desktop views 
+*/
 @media (min-width: 769px) {
   .burger-menu, .navbar-links {
       display: none;

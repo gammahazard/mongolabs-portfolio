@@ -1,41 +1,43 @@
+/* Font face declaration for MongoLabsF */
 @font-face {
-  font-family: 'MongoLabsF';  /* You can name this whatever you like */
+  font-family: 'MongoLabsF';
   src: url('../assets/mongolabsfont.otf');
-
 }
+
+/* Main footer styling */
 .footer {
-  display: absolute;
-font-family:'MongoLabsF';
+  display: flex;   /* Use flexbox for layout */
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Adjust as needed */
+  padding: 10px 20px;
   background-color: black;
-  color: #33FF33; /* Terminal green color */
-
-
-  font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font */
-  z-index:99;
-  margin-top:25px;
-  flex-shrink:0;
+  color: #33FF33;  /* Terminal green color */
+  font-family: 'Consolas', 'Courier New', Courier, monospace; /* Terminal-like font as a fallback */
+  z-index: 99;
+  margin-top: 25px;
+  flex-shrink: 0;
 }
 
+/* Styling for social media icons container */
 .social-icons {
   display: flex;
   gap: 15px;
 }
 
+/* Icon specific styling */
 .icon {
-  color: #33FF33; /* Terminal green color */
-  font-size: 24px; /* Adjust size as needed */
+  color: #33FF33;  /* Terminal green color */
+  font-size: 24px;
   transition: color 0.3s;
 }
-.footertext {
-text-align:right;
-font-size:small;
+
+/* Icon hover effect */
+.icon:hover {
+  color: #4CAF50;  /* Slightly lighter green for hover effect */
 }
 
-.icon:hover {
-
-    color: #4CAF50; /* Slightly lighter green for hover effect */
-  
+/* Copyright text styling */
+.footertext {
+  text-align: right;
+  font-size: small;
 }

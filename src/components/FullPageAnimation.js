@@ -1,10 +1,9 @@
+// Required dependencies
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
 import './FullPageAnimation.css';
 
-
-
+// Array of sequences that will be displayed
 const sequences = [
     "Retrieving core databases",
     "Executing syntax checks",
@@ -19,32 +18,33 @@ const sequences = [
 ];
 
 const FullPageAnimation = () => {
+    // State initialization
     const [loadingDone, setLoadingDone] = useState(false);
     const [sequenceIndex, setSequenceIndex] = useState(0);
-    const [fadeOut, setFadeOut] = useState(false);
     const canvasRef = useRef(null);
+
+    // Start the sequences immediately on mount
     useEffect(() => {
-        setLoadingDone(true); // start the sequences immediately on mount
+        setLoadingDone(true);
     }, []);
+
+    // Effect responsible for the matrix-style animation on the canvas
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
-    
+
         // Set canvas dimensions
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-    
+
         // Check if canvas dimensions are valid
         if (canvas.width <= 0 || canvas.height <= 0) return;
-    
+
         const letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'.split('');
         const fontSize = 10;
-    
-        // Ensure columns is at least 1
         const columns = Math.max(1, Math.floor(canvas.width / fontSize));
-        
         const drops = Array(columns).fill(1);
-        
+
         function draw() {
             ctx.fillStyle = 'rgba(0, 0, 0, .1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -58,13 +58,14 @@ const FullPageAnimation = () => {
                 }
             }
         }
-        
+
         const intervalId = setInterval(draw, 33);
-        
+
         // Cleanup function
         return () => clearInterval(intervalId);
     }, []);
-    
+
+    // Effect responsible for moving through sequences with a delay
     useEffect(() => {
         if (loadingDone && sequenceIndex < sequences.length) {
             setTimeout(() => {
@@ -79,8 +80,7 @@ const FullPageAnimation = () => {
         }
     }, [loadingDone, sequenceIndex]);
 
-
-
+    // Render
     return (
         <motion.div 
             initial={{ opacity: 1 }} 
@@ -89,39 +89,37 @@ const FullPageAnimation = () => {
             transition={{ duration: 1.5 }} 
             className="full-page-animation"
         >
-
-            
             <h1 className="title">MongoLabs</h1>
-      
+
             <div className={`overlay ${loadingDone ? 'fade-to-black' : ''}`}></div>
-            
+
             <div className="hacking-sequence">
                 {sequences.map((seq, index) => (
-    <motion.div key={index} className="sequence-item">
-      <motion.p 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: (index < sequenceIndex) ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="initiating-text"
-      >
-        {seq}
-      </motion.p>
-      {index < sequenceIndex && (
-        <motion.span 
-          initial={{ opacity: 0, x: "-50%" }} 
-          animate={{ opacity: 1, x: "0%" }}
-          transition={{ duration: 0.25 }}
-          className="checkmark"
-        >
-          ✓
-        </motion.span>
-      )}
-    </motion.div>
-  ))}
- </div>
+                    <motion.div key={index} className="sequence-item">
+                        <motion.p 
+                            initial={{ opacity: 0 }} 
+                            animate={{ opacity: (index < sequenceIndex) ? 1 : 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="initiating-text"
+                        >
+                            {seq}
+                        </motion.p>
+                        {index < sequenceIndex && (
+                            <motion.span 
+                                initial={{ opacity: 0, x: "-50%" }} 
+                                animate={{ opacity: 1, x: "0%" }}
+                                transition={{ duration: 0.25 }}
+                                className="checkmark"
+                            >
+                                ✓
+                            </motion.span>
+                        )}
+                    </motion.div>
+                ))}
+            </div>
 
             <div className="loader"></div>
-            
+
             <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: (sequenceIndex >= sequences.length) ? 1 : 0 }}
@@ -131,10 +129,8 @@ const FullPageAnimation = () => {
                 <span id="sequence-final" style={{ fontFamily: "'DSEG', monospace" }}>
                     Initializing the lab...
                 </span>
-       
             </motion.p>
             <canvas ref={canvasRef}></canvas>
-       
         </motion.div>
     );
 };

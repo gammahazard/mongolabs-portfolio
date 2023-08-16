@@ -62,7 +62,7 @@ function Home() {
 
 
     return (
-        <div className="home-container">
+        <div className="home-container" data-testid="app-showcase">
             <motion.div 
                 className="overlay"
                 initial={{ opacity: 1 }}
