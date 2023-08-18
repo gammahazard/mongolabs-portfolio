@@ -115,7 +115,12 @@ body {
 .platform-button {
     margin-top:15px;
 }
-
+.app-showcase-demo {
+    width: 100%;
+    max-width: 100%;
+    z-index:500;
+    margin: 20px auto;
+}
 .app-showcase-link:hover, 
 .platform-button:hover {
     background-color: #333;

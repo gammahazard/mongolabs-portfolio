@@ -102,20 +102,22 @@ function AppShowcase({
 
                     {/* Render platform buttons for BlissTech */}
                     {
-                        title === "BlissTech" && platforms.map(platform => (
-                            <button
-                                key={platform.name}
-                                className="platform-button"
-                                onClick={() => {
-                                    if (window.confirm("This will start a download for BlissTech on your computer, do you wish to continue?")) {
-                                        window.location.href = platform.link;
-                                    }
-                                }}
-                            >
-                                {platform.name}
-                            </button>
-                        ))
-                    }
+    title === "BlissTech" && platforms.map(platform => (
+        <button
+            key={platform.name}
+            className="platform-button"
+            onClick={() => {
+                if (platform.name === "Demo") {
+                    window.open(platform.link, '_blank');
+                } else if (window.confirm("This will start a download for BlissTech on your computer, do you wish to continue?")) {
+                    window.location.href = platform.link;
+                }
+            }}
+        >
+            {platform.name}
+        </button>
+    ))
+}
 
                 </motion.div>
             </div>

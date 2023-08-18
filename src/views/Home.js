@@ -37,9 +37,12 @@ function Home() {
                 { name: "Windows-x64", link: "https://mongolabs-blisstech.s3.us-west-2.amazonaws.com/BlissTech+1.0.0+x64.exe" },
                 { name: "Windows-x32", link: "https://mongolabs-blisstech.s3.us-west-2.amazonaws.com/BlissTech+1.0.0+x32.exe" },
                 { name: "Mac", link: "https://mongolabs-blisstech.s3.us-west-2.amazonaws.com/BlissTech-Mac.zip" },
+                { name: "Demo", link: "https://vimeo.com/855792088" },
             ],
+          
+    },
      
-        },
+        
         {
             title: "CyberVerse",
             description: "A meticulously crafted website for a blockchain game on the Ergo network. Showcases in-game characters as NFTs, facilitating web3 wallet connections. The platform is enriched with custom JavaScript features, presenting an interactive UI and ensuring a secure user experience.",
@@ -95,7 +98,8 @@ function Home() {
     description={apps[currentApp].description}
     image={apps[currentApp].image}
     link={apps[currentApp].link}
-    platforms={apps[currentApp].platforms}  // Add this line
+    platforms={apps[currentApp].platforms}  
+    demoVideoURL={apps[currentApp].demoVideoURL} 
     direction={{ exit: exitDirection, enter: enterDirection }}
     onNext={onNext}
     onPrev={onPrev}
